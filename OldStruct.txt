@@ -1,39 +1,3 @@
-        public float gforce_lat;
-        public float gforce_lon;
-        public float Lap;
-        public float RPM;
-        public float SLI_Support;
-        public float RacePos;
-        public float KERS_Level;
-        public float KERS_Max_Level;
-        public float DRS;
-        public float Traction_Control;
-        public float Anti_Lock_Breakes;
-        public float Fuel;
-        public float Fuel_Capacity;
-        public float In_Pit;
-        public float Sector;
-        public float Sector1_Time;
-        public float Sector2_Time;
-        public float brake_temp;
-        public float wheels_pressure;
-        public float Team_ID;
-        public float Total_Laps;
-        public float Track_Size;
-        public float Last_Lap_Time;
-        public float max_RPM;
-        public float idle_RPM;
-        public float max_Gears;
-        public float SessionType;
-        public float DRS_Allowed;
-        public float TrackNumber;
-        public float FIAFlag;
-
-
-
-
-
-
 struct UDPPacket
 {
     float m_time;
@@ -70,8 +34,6 @@ struct UDPPacket
     float m_brake;
     float m_clutch;
     float m_gear;
-
-
     float m_gforce_lat;
     float m_gforce_lon;
     float m_lap;
