@@ -30,15 +30,19 @@ namespace Telemetry
         // Thread for capturing
         private Thread CaptureThread = null;
         // Holds the latest Data
-        TelemetryPacket latestData;
+        public TelemetryPacket latestData;
         //Mutex Protection
         static object syncObj = new object();
+
+        private TelemetryManager manager;
 
         
 
         public Form1()
         {
             InitializeComponent();
+
+            manager = new TelemetryManager();
 
             remoteIP = new IPEndPoint(IPAddress.Parse(IP), PORT);
 
@@ -95,23 +99,99 @@ namespace Telemetry
         {
             timer1.Stop();
             Monitor.Enter(syncObj);
-            label2.Text = latestData.Throttle.ToString();
-            label4.Text = latestData.Brake.ToString();
-            switch (latestData.Gear)
-            {
-                case 0: label6.Text = "R"; break;
-                case 1: label6.Text = "N"; break;
-                case 2: label6.Text = "1"; break;
-                case 3: label6.Text = "2"; break;
-                case 4: label6.Text = "3"; break;
-                case 5: label6.Text = "4"; break;
-                case 6: label6.Text = "5"; break;
-                case 7: label6.Text = "6"; break;
-                case 8: label6.Text = "7"; break;
-                case 9: label6.Text = "8"; break;
-            }
+            update_raceinfo();
+            //label2.Text = latestData.DRS.ToString();
+            //label4.Text = latestData.DRS_Allowed.ToString();
+            //UpdateThrottleBreak(latestData.Throttle, latestData.Brake);
+            //label6.Text = manager.CurrentGear(latestData.Gear);
             Monitor.Exit(syncObj);
             timer1.Start();
+        }
+        /*
+        private void UpdateThrottleBreak(float throttle, float brake)
+        {
+            const float MaxHeight = 75;
+
+            BrakeBar.Height = (int)(MaxHeight * brake);
+            ThrottleBar.Height = (int)(MaxHeight * throttle);
+
+            BrakeBar.Location = new Point(732, 66 - BrakeBar.Height);
+            ThrottleBar.Location = new Point(666, 66 - ThrottleBar.Height);
+        }
+        */
+
+        private void update_raceinfo()
+        {
+            time.Text = latestData.Time.ToString();
+            laptime.Text = latestData.LapTime.ToString();
+            lapdistance.Text = latestData.LapTime.ToString();
+            totaldistance.Text = latestData.TotalDistance.ToString();
+            x.Text = latestData.X.ToString();
+            y.Text = latestData.Y.ToString();
+            z.Text = latestData.Z.ToString();
+            speed.Text = latestData.Speed.ToString();
+            vx.Text = latestData.VX.ToString();
+            vy.Text = latestData.VY.ToString();
+            vz.Text = latestData.VZ.ToString();
+            rdx.Text = latestData.RDX.ToString();
+            rdy.Text = latestData.RDY.ToString();
+            rdz.Text = latestData.RDZ.ToString();
+            fdx.Text = latestData.FDX.ToString();
+            fdy.Text = latestData.FDY.ToString();
+            fdz.Text = latestData.FDZ.ToString();
+            susp_pos_rl.Text = latestData.susp_pos_rl.ToString();
+            susp_pos_rr.Text = latestData.susp_pos_rr.ToString();
+            susp_pos_fl.Text = latestData.susp_pos_fl.ToString();
+            susp_pos_fr.Text = latestData.susp_pos_fr.ToString();
+            susp_vel_rl.Text = latestData.susp_vel_rl.ToString();
+            susp_vel_rr.Text = latestData.susp_vel_rr.ToString();
+            susp_vel_fl.Text = latestData.susp_vel_fl.ToString();
+            susp_vel_fr.Text = latestData.susp_vel_fr.ToString();
+            wheelspeed_rl.Text = latestData.wheelspeed_rl.ToString();
+            wheelspeed_rr.Text = latestData.wheelspeed_rr.ToString();
+            wheelspeed_fl.Text = latestData.wheelspeed_fl.ToString();
+            wheelspeed_fr.Text = latestData.wheelspeed_fr.ToString();
+            throttle.Text = latestData.Throttle.ToString();
+            steer.Text = latestData.Steer.ToString();
+            brake.Text = latestData.Brake.ToString();
+            clutch.Text = latestData.Clutch.ToString();
+            gear.Text = latestData.Gear.ToString();
+            gforce_lat.Text = latestData.gforce_lat.ToString();
+            gforce_lon.Text = latestData.gforce_lon.ToString();
+            lap.Text = latestData.Lap.ToString();
+            rpm.Text = latestData.RPM.ToString();
+            sli.Text = latestData.SLI_Support.ToString();
+            racepos.Text = latestData.RacePos.ToString();
+            kers_level.Text = latestData.KERS_Level.ToString();
+            kers_max.Text = latestData.KERS_Max_Level.ToString();
+            drs.Text = latestData.DRS.ToString();
+            traction_control.Text = latestData.Traction_Control.ToString();
+            abs.Text = latestData.ABS.ToString();
+            fuel.Text = latestData.Fuel.ToString();
+            fuel_capacity.Text = latestData.Fuel_Capacity.ToString();
+            in_pit.Text = latestData.In_Pit.ToString();
+            sector.Text = latestData.Sector.ToString();
+            sector1.Text = latestData.Sector1_Time.ToString();
+            sector2.Text = latestData.Sector2_Time.ToString();
+            braketemp_rl.Text = latestData.brake_temp_rl.ToString();
+            braketemp_rr.Text = latestData.brake_temp_rr.ToString();
+            braketemp_fl.Text = latestData.brake_temp_fl.ToString();
+            braketemp_fr.Text = latestData.brake_temp_fr.ToString();
+            wheelpsi_rl.Text = latestData.wheels_pressure_rl.ToString();
+            wheelpsi_rr.Text = latestData.wheels_pressure_rr.ToString();
+            wheelpsi_fl.Text = latestData.wheels_pressure_fl.ToString();
+            wheelpsi_fr.Text = latestData.wheels_pressure_fr.ToString();
+            teamid.Text = latestData.Team_ID.ToString();
+            totallaps.Text = latestData.Total_Laps.ToString();
+            tracksize.Text = latestData.Track_Size.ToString();
+            lastlap.Text = latestData.Last_Lap_Time.ToString();
+            maxrpm.Text = latestData.max_RPM.ToString();
+            idlerpm.Text = latestData.idle_RPM.ToString();
+            maxgear.Text = latestData.max_Gears.ToString();
+            sessiontype.Text = latestData.SessionType.ToString();
+            drs_allowed.Text = latestData.DRS_Allowed.ToString();
+            trackid.Text = latestData.TrackNumber.ToString();
+            fia_flag.Text = latestData.FIAFlag.ToString();
         }
     }
 }
