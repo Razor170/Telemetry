@@ -164,6 +164,11 @@ namespace Telemetry
         public float TrackNumber;
         public float FIAFlag;
 
+        public float SpeedInKMH
+        {
+            get { return Speed * 3.60f; }
+        }
+
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {

@@ -100,25 +100,35 @@ namespace Telemetry
             timer1.Stop();
             Monitor.Enter(syncObj);
             update_raceinfo();
-            //label2.Text = latestData.DRS.ToString();
-            //label4.Text = latestData.DRS_Allowed.ToString();
-            //UpdateThrottleBreak(latestData.Throttle, latestData.Brake);
-            //label6.Text = manager.CurrentGear(latestData.Gear);
+            Window2();
+            UpdateThrottleBreak(latestData.Throttle, latestData.Brake);
+            //Speed RPM & Gear
+            data_gear.Text = manager.CurrentGear(latestData.Gear);
+            data_rpm.Text = latestData.RPM.ToString("0");
+            data_speed.Text = latestData.SpeedInKMH.ToString("0");
+            //DRS
+            if ((latestData.DRS == 0) && (latestData.DRS_Allowed == 0))
+                data_drs.ForeColor = System.Drawing.Color.Gray;
+            else if (latestData.DRS_Allowed == 1)
+                data_drs.ForeColor = System.Drawing.Color.Orange;
+            else if (latestData.DRS == 1)
+                data_drs.ForeColor = System.Drawing.Color.Green;
+
             Monitor.Exit(syncObj);
             timer1.Start();
         }
-        /*
+        
         private void UpdateThrottleBreak(float throttle, float brake)
         {
-            const float MaxHeight = 75;
+            const float MaxHeight = 52;
 
             BrakeBar.Height = (int)(MaxHeight * brake);
             ThrottleBar.Height = (int)(MaxHeight * throttle);
 
-            BrakeBar.Location = new Point(732, 66 - BrakeBar.Height);
-            ThrottleBar.Location = new Point(666, 66 - ThrottleBar.Height);
+            BrakeBar.Location = new Point(331, 64 - BrakeBar.Height);
+            ThrottleBar.Location = new Point(353, 64 - ThrottleBar.Height);
         }
-        */
+        
 
         private void update_raceinfo()
         {
@@ -193,5 +203,280 @@ namespace Telemetry
             trackid.Text = latestData.TrackNumber.ToString();
             fia_flag.Text = latestData.FIAFlag.ToString();
         }
+
+        private void Window2()
+        {
+            //Streckeninformationen
+            circuit_name.Text = Circuits[(int)latestData.TrackNumber, 0];
+            circuit_length.Text = Circuits[(int)latestData.TrackNumber, 1];
+            circuit_rounds.Text = Circuits[(int)latestData.TrackNumber, 2];
+            circuit_tyres.Text = Circuits[(int)latestData.TrackNumber, 3];
+            circuit_pitspeed.Text = Circuits[(int)latestData.TrackNumber, 4];
+            circuit_tyreuse.Text = Circuits[(int)latestData.TrackNumber, 5];
+            circuit_drs.Text = Circuits[(int)latestData.TrackNumber, 6];
+        }
+
+        
+            string [,] Circuits = new string[25, 7]
+            {
+                /*  Land - Ort - Strecke
+                 *  Rundenlänge
+                 *  Rundenanzahl
+                 *  Reifentypen
+                 *  Boxengeschwindigkeit
+                 *  Reifenverschleiß
+                 *  DRS-Zonen
+                 */
+                {
+                    //0
+                    "Australien - Melbourne - Albert Park Circuit",
+                    "5,303 km",
+                    "58 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 1 MP"
+                },
+                {
+                    //1
+                    "Malaysia - Sepang - Sepang International Circuit",
+                    "5,543 km",
+                    "56 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "hoch",
+                    "2x via 2 MP"
+                },
+                {
+                    //2
+                    "China - Shanghai - Shanghai International Circuit",
+                    "5,451 km",
+                    "56 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "hoch",
+                    "2x via 2 MP"
+                },
+                {
+                    //3
+                    "Bahrain - Sachir - Bahrain International Circuit",
+                    "5,412 km",
+                    "57 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 2 MP"
+                },
+                {
+                    //4
+                    "Spanien - Montmelo - Circuit de Barcelona-Catalunya",
+                    "4,655 km",
+                    "66 Runden",
+                    "S, M, H", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x DRS" // CHECKEN
+                },
+                {
+                    //5
+                    "Monaco - Monte Carlo - Circuit de Monaco",
+                    "3,337 km",
+                    "78 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "hoch",
+                    "1x via 1 MP"
+                },
+                {
+                    //6
+                    "Kanada - Montreal - Circuit Gilles-Villeneuve",
+                    "4,361 km",
+                    "70 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "niedrig",
+                    "2x via 1 MP"
+                },
+                {
+                    //7
+                    "Großbritannien - Silverstone - Silverstone Circuit",
+                    "5,891 km",
+                    "52 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 2 MP"
+                },
+                {
+                    //8
+                    "Deutschland - Hockenheim - Hockenheimring Baden-Württemberg",
+                    "4,574 km",
+                    "67 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "1x via 1 MP"
+                },
+                {
+                    //9
+                    "Ungarn - Mogyorod - Hungaroring",
+                    "4,381 km",
+                    "70 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "1x via 1 MP"
+                },
+                {
+                    //10
+                    "Belgien - Spa - Circuit de Spa-Francorchamps",
+                    "7,004 km",
+                    "44 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "niedrig",
+                    "2x via 2 MP"
+                },
+                {
+                    //11
+                    "Italien - Monza - Autodromo Nazionale Monza",
+                    "5,793 km",
+                    "53 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "niedrig",
+                    "2x via 2 MP"
+                },
+                {
+                    //12
+                    "Singapur - Singapur - Marina Bay Street Circuit",
+                    "5,073 km",
+                    "61 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 2 MP"
+                },
+                {
+                    //13
+                    "Japan - Suzuka - Suzuka International Racing Course",
+                    "5,807 km",
+                    "53 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "hoch",
+                    "1x via 1 MP"
+                },
+                {
+                    //14
+                    "Vereinigte Arabische Emirate - Abu Dhabi - Yas Marina Circuit",
+                    "5,554 km",
+                    "55 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "niedrig",
+                    "2x via 2 MP"
+                },
+                {
+                    //15
+                    "USA - Austin - Circuit of The Americas",
+                    "5,516 km",
+                    "56 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 2 MP"
+                },
+                {
+                    //16
+                    "Brasilien - Sao Paulo - Autodromo Jose Carlos Pace",
+                    "4,309 km",
+                    "71 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 2 MP"
+                },
+                {
+                    //17
+                    "Österreich - Spielberg - Red Bull Ring",
+                    "4,326 km",
+                    "71 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "gering",
+                    "2x via 2 MP"
+                },
+                {
+                    //18
+                    "Russland - Sotschi - Sochi Autodrom",
+                    "5,848 km",
+                    "53 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "niedrig",
+                    "2x via 2 MP"
+                },
+                {
+                    //19
+                    "Mexiko - Mexiko-Stadt - Autodromo Hermanos Rodriguez",
+                    "4,304 km",
+                    "66 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 1 MP"
+                },
+                {
+                    //20
+                    "Aserbaidschan - Baku - Baku City Circuit",
+                    "6,003 km",
+                    "51 Runden",
+                    "SS, S, M", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "2x via 1 MP"
+                },
+                {
+                    //21
+                    "Land - Stadt - Strecke",
+                    "0,000 km",
+                    "00 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "0x DRS"
+                },
+                {
+                    //22
+                    "Land - Stadt - Strecke",
+                    "0,000 km",
+                    "00 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "0x DRS"
+                },
+                {
+                    //23
+                    "Land - Stadt - Strecke",
+                    "0,000 km",
+                    "00 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "0x DRS"
+                },
+                {
+                    //24
+                    "Land - Stadt - Strecke",
+                    "0,000 km",
+                    "00 Runden",
+                    "US, SS, S", // CHECKEN
+                    "60 km/h", // CHECKEN
+                    "mittel",
+                    "0x DRS"
+                }
+            };
     }
 }

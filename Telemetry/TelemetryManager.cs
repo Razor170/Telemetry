@@ -27,6 +27,5 @@ namespace Telemetry
                 }
                 return _Gear;
         }
-
     }
 }
