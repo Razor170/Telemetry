@@ -200,33 +200,33 @@
             this.BrakeBar = new System.Windows.Forms.Label();
             this.data_drs = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.data_fw_r = new System.Windows.Forms.Label();
+            this.data_fw_l = new System.Windows.Forms.Label();
+            this.data_engine_dmg = new System.Windows.Forms.Label();
+            this.data_gear_dmg = new System.Windows.Forms.Label();
+            this.data_exhaust = new System.Windows.Forms.Label();
+            this.data_engine_temp = new System.Windows.Forms.Label();
+            this.data_rw = new System.Windows.Forms.Label();
+            this.data_tyre_fl_type = new System.Windows.Forms.Label();
+            this.data_tyre_fr_type = new System.Windows.Forms.Label();
+            this.data_tyre_rl_type = new System.Windows.Forms.Label();
+            this.type = new System.Windows.Forms.Label();
+            this.data_tyre_fl_dmg = new System.Windows.Forms.Label();
+            this.data_tyre_rr_dmg = new System.Windows.Forms.Label();
+            this.data_tyre_rl_dmg = new System.Windows.Forms.Label();
+            this.data_tyre_fr_dmg = new System.Windows.Forms.Label();
+            this.data_tyre_fl_wear = new System.Windows.Forms.Label();
+            this.data_tyre_rr_wear = new System.Windows.Forms.Label();
+            this.data_tyre_rl_wear = new System.Windows.Forms.Label();
+            this.data_tyre_fr_wear = new System.Windows.Forms.Label();
+            this.data_tyre_fl_temp = new System.Windows.Forms.Label();
+            this.data_tyre_rr_temp = new System.Windows.Forms.Label();
+            this.data_tyre_rl_temp = new System.Windows.Forms.Label();
+            this.data_tyre_fr_temp = new System.Windows.Forms.Label();
+            this.data_tyre_fr_psi = new System.Windows.Forms.Label();
+            this.data_tyre_fl_psi = new System.Windows.Forms.Label();
+            this.data_tyre_rr_psi = new System.Windows.Forms.Label();
+            this.data_tyre_rl_psi = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -238,17 +238,58 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
+            this.data_brake_fl_temp = new System.Windows.Forms.Label();
+            this.data_brake_fr_temp = new System.Windows.Forms.Label();
+            this.data_brake_rl_temp = new System.Windows.Forms.Label();
+            this.data_brake_rr_temp = new System.Windows.Forms.Label();
+            this.data_brake_fl_bias = new System.Windows.Forms.Label();
+            this.data_brake_fr_bias = new System.Windows.Forms.Label();
+            this.data_brake_rl_bias = new System.Windows.Forms.Label();
+            this.data_brake_rr_bias = new System.Windows.Forms.Label();
+            this.data_fuel = new System.Windows.Forms.Label();
+            this.data_traction = new System.Windows.Forms.Label();
+            this.data_abs = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.data_flag = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.raceinfo.SuspendLayout();
@@ -256,6 +297,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -269,18 +312,19 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(939, 795);
+            this.tabControl1.Size = new System.Drawing.Size(939, 762);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(931, 769);
+            this.tabPage2.Size = new System.Drawing.Size(931, 736);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fahrzeug 1";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -430,7 +474,7 @@
             this.raceinfo.Location = new System.Drawing.Point(4, 22);
             this.raceinfo.Name = "raceinfo";
             this.raceinfo.Padding = new System.Windows.Forms.Padding(3);
-            this.raceinfo.Size = new System.Drawing.Size(931, 769);
+            this.raceinfo.Size = new System.Drawing.Size(931, 731);
             this.raceinfo.TabIndex = 0;
             this.raceinfo.Text = "Debug";
             this.raceinfo.UseVisualStyleBackColor = true;
@@ -1986,17 +2030,17 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label58);
-            this.groupBox2.Controls.Add(this.label57);
-            this.groupBox2.Controls.Add(this.label56);
-            this.groupBox2.Controls.Add(this.label55);
-            this.groupBox2.Controls.Add(this.label54);
-            this.groupBox2.Controls.Add(this.label53);
-            this.groupBox2.Controls.Add(this.label52);
-            this.groupBox2.Controls.Add(this.label51);
-            this.groupBox2.Controls.Add(this.label50);
-            this.groupBox2.Controls.Add(this.label49);
-            this.groupBox2.Controls.Add(this.label48);
+            this.groupBox2.Controls.Add(this.data_abs);
+            this.groupBox2.Controls.Add(this.data_traction);
+            this.groupBox2.Controls.Add(this.data_fuel);
+            this.groupBox2.Controls.Add(this.data_brake_rr_bias);
+            this.groupBox2.Controls.Add(this.data_brake_rl_bias);
+            this.groupBox2.Controls.Add(this.data_brake_fr_bias);
+            this.groupBox2.Controls.Add(this.data_brake_fl_bias);
+            this.groupBox2.Controls.Add(this.data_brake_rr_temp);
+            this.groupBox2.Controls.Add(this.data_brake_rl_temp);
+            this.groupBox2.Controls.Add(this.data_brake_fr_temp);
+            this.groupBox2.Controls.Add(this.data_brake_fl_temp);
             this.groupBox2.Controls.Add(this.label47);
             this.groupBox2.Controls.Add(this.label46);
             this.groupBox2.Controls.Add(this.label45);
@@ -2008,33 +2052,33 @@
             this.groupBox2.Controls.Add(this.label39);
             this.groupBox2.Controls.Add(this.label38);
             this.groupBox2.Controls.Add(this.label37);
-            this.groupBox2.Controls.Add(this.label36);
-            this.groupBox2.Controls.Add(this.label35);
-            this.groupBox2.Controls.Add(this.label34);
-            this.groupBox2.Controls.Add(this.label33);
-            this.groupBox2.Controls.Add(this.label32);
-            this.groupBox2.Controls.Add(this.label31);
-            this.groupBox2.Controls.Add(this.label30);
-            this.groupBox2.Controls.Add(this.label29);
-            this.groupBox2.Controls.Add(this.label28);
-            this.groupBox2.Controls.Add(this.label27);
-            this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Controls.Add(this.label25);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.data_tyre_rl_psi);
+            this.groupBox2.Controls.Add(this.data_tyre_rr_psi);
+            this.groupBox2.Controls.Add(this.data_tyre_fl_psi);
+            this.groupBox2.Controls.Add(this.data_tyre_fr_psi);
+            this.groupBox2.Controls.Add(this.data_tyre_fr_temp);
+            this.groupBox2.Controls.Add(this.data_tyre_rl_temp);
+            this.groupBox2.Controls.Add(this.data_tyre_rr_temp);
+            this.groupBox2.Controls.Add(this.data_tyre_fl_temp);
+            this.groupBox2.Controls.Add(this.data_tyre_fr_wear);
+            this.groupBox2.Controls.Add(this.data_tyre_rl_wear);
+            this.groupBox2.Controls.Add(this.data_tyre_rr_wear);
+            this.groupBox2.Controls.Add(this.data_tyre_fl_wear);
+            this.groupBox2.Controls.Add(this.data_tyre_fr_dmg);
+            this.groupBox2.Controls.Add(this.data_tyre_rl_dmg);
+            this.groupBox2.Controls.Add(this.data_tyre_rr_dmg);
+            this.groupBox2.Controls.Add(this.data_tyre_fl_dmg);
+            this.groupBox2.Controls.Add(this.type);
+            this.groupBox2.Controls.Add(this.data_tyre_rl_type);
+            this.groupBox2.Controls.Add(this.data_tyre_fr_type);
+            this.groupBox2.Controls.Add(this.data_tyre_fl_type);
+            this.groupBox2.Controls.Add(this.data_rw);
+            this.groupBox2.Controls.Add(this.data_engine_temp);
+            this.groupBox2.Controls.Add(this.data_exhaust);
+            this.groupBox2.Controls.Add(this.data_gear_dmg);
+            this.groupBox2.Controls.Add(this.data_engine_dmg);
+            this.groupBox2.Controls.Add(this.data_fw_l);
+            this.groupBox2.Controls.Add(this.data_fw_r);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Location = new System.Drawing.Point(389, 6);
             this.groupBox2.Name = "groupBox2";
@@ -2079,6 +2123,7 @@
             this.data_speed.Size = new System.Drawing.Size(40, 24);
             this.data_speed.TabIndex = 1;
             this.data_speed.Text = "999";
+            this.data_speed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label10
             // 
@@ -2099,6 +2144,7 @@
             this.data_rpm.Size = new System.Drawing.Size(60, 24);
             this.data_rpm.TabIndex = 3;
             this.data_rpm.Text = "99999";
+            this.data_rpm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
@@ -2147,248 +2193,248 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label8
+            // data_fw_r
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(444, 39);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Status: 100%";
+            this.data_fw_r.AutoSize = true;
+            this.data_fw_r.Location = new System.Drawing.Point(444, 39);
+            this.data_fw_r.Name = "data_fw_r";
+            this.data_fw_r.Size = new System.Drawing.Size(69, 13);
+            this.data_fw_r.TabIndex = 1;
+            this.data_fw_r.Text = "Status: 100%";
             // 
-            // label9
+            // data_fw_l
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Status: 100%";
+            this.data_fw_l.AutoSize = true;
+            this.data_fw_l.Location = new System.Drawing.Point(6, 39);
+            this.data_fw_l.Name = "data_fw_l";
+            this.data_fw_l.Size = new System.Drawing.Size(69, 13);
+            this.data_fw_l.TabIndex = 2;
+            this.data_fw_l.Text = "Status: 100%";
             // 
-            // label11
+            // data_engine_dmg
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(447, 343);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Motor: 100%";
+            this.data_engine_dmg.AutoSize = true;
+            this.data_engine_dmg.Location = new System.Drawing.Point(447, 343);
+            this.data_engine_dmg.Name = "data_engine_dmg";
+            this.data_engine_dmg.Size = new System.Drawing.Size(66, 13);
+            this.data_engine_dmg.TabIndex = 3;
+            this.data_engine_dmg.Text = "Motor: 100%";
             // 
-            // label13
+            // data_gear_dmg
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(434, 356);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 13);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Getriebe: 100%";
+            this.data_gear_dmg.AutoSize = true;
+            this.data_gear_dmg.Location = new System.Drawing.Point(434, 356);
+            this.data_gear_dmg.Name = "data_gear_dmg";
+            this.data_gear_dmg.Size = new System.Drawing.Size(79, 13);
+            this.data_gear_dmg.TabIndex = 4;
+            this.data_gear_dmg.Text = "Getriebe: 100%";
             // 
-            // label14
+            // data_exhaust
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(414, 369);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 13);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "Erschöpfung: 100%";
+            this.data_exhaust.AutoSize = true;
+            this.data_exhaust.Location = new System.Drawing.Point(414, 369);
+            this.data_exhaust.Name = "data_exhaust";
+            this.data_exhaust.Size = new System.Drawing.Size(99, 13);
+            this.data_exhaust.TabIndex = 5;
+            this.data_exhaust.Text = "Erschöpfung: 100%";
             // 
-            // label15
+            // data_engine_temp
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(441, 388);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 13);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "Motor: 140 °C";
+            this.data_engine_temp.AutoSize = true;
+            this.data_engine_temp.Location = new System.Drawing.Point(441, 388);
+            this.data_engine_temp.Name = "data_engine_temp";
+            this.data_engine_temp.Size = new System.Drawing.Size(72, 13);
+            this.data_engine_temp.TabIndex = 6;
+            this.data_engine_temp.Text = "Motor: 140 °C";
             // 
-            // label16
+            // data_rw
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(444, 699);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 13);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Status: 100%";
+            this.data_rw.AutoSize = true;
+            this.data_rw.Location = new System.Drawing.Point(444, 699);
+            this.data_rw.Name = "data_rw";
+            this.data_rw.Size = new System.Drawing.Size(69, 13);
+            this.data_rw.TabIndex = 7;
+            this.data_rw.Text = "Status: 100%";
             // 
-            // label17
+            // data_tyre_fl_type
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 155);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Ultra Soft";
+            this.data_tyre_fl_type.AutoSize = true;
+            this.data_tyre_fl_type.Location = new System.Drawing.Point(6, 155);
+            this.data_tyre_fl_type.Name = "data_tyre_fl_type";
+            this.data_tyre_fl_type.Size = new System.Drawing.Size(51, 13);
+            this.data_tyre_fl_type.TabIndex = 8;
+            this.data_tyre_fl_type.Text = "Ultra Soft";
             // 
-            // label18
+            // data_tyre_fr_type
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(462, 155);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(51, 13);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "Ultra Soft";
+            this.data_tyre_fr_type.AutoSize = true;
+            this.data_tyre_fr_type.Location = new System.Drawing.Point(462, 155);
+            this.data_tyre_fr_type.Name = "data_tyre_fr_type";
+            this.data_tyre_fr_type.Size = new System.Drawing.Size(51, 13);
+            this.data_tyre_fr_type.TabIndex = 9;
+            this.data_tyre_fr_type.Text = "Ultra Soft";
             // 
-            // label19
+            // data_tyre_rl_type
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 618);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(51, 13);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "Ultra Soft";
+            this.data_tyre_rl_type.AutoSize = true;
+            this.data_tyre_rl_type.Location = new System.Drawing.Point(6, 618);
+            this.data_tyre_rl_type.Name = "data_tyre_rl_type";
+            this.data_tyre_rl_type.Size = new System.Drawing.Size(51, 13);
+            this.data_tyre_rl_type.TabIndex = 10;
+            this.data_tyre_rl_type.Text = "Ultra Soft";
             // 
-            // label20
+            // type
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(462, 618);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 13);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "Ultra Soft";
+            this.type.AutoSize = true;
+            this.type.Location = new System.Drawing.Point(462, 618);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(51, 13);
+            this.type.TabIndex = 11;
+            this.type.Text = "Ultra Soft";
             // 
-            // label21
+            // data_tyre_fl_dmg
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 142);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 13);
-            this.label21.TabIndex = 12;
-            this.label21.Text = "Schaden: 0%";
+            this.data_tyre_fl_dmg.AutoSize = true;
+            this.data_tyre_fl_dmg.Location = new System.Drawing.Point(6, 142);
+            this.data_tyre_fl_dmg.Name = "data_tyre_fl_dmg";
+            this.data_tyre_fl_dmg.Size = new System.Drawing.Size(70, 13);
+            this.data_tyre_fl_dmg.TabIndex = 12;
+            this.data_tyre_fl_dmg.Text = "Schaden: 0%";
             // 
-            // label22
+            // data_tyre_rr_dmg
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(443, 605);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(70, 13);
-            this.label22.TabIndex = 13;
-            this.label22.Text = "Schaden: 0%";
+            this.data_tyre_rr_dmg.AutoSize = true;
+            this.data_tyre_rr_dmg.Location = new System.Drawing.Point(443, 605);
+            this.data_tyre_rr_dmg.Name = "data_tyre_rr_dmg";
+            this.data_tyre_rr_dmg.Size = new System.Drawing.Size(70, 13);
+            this.data_tyre_rr_dmg.TabIndex = 13;
+            this.data_tyre_rr_dmg.Text = "Schaden: 0%";
             // 
-            // label23
+            // data_tyre_rl_dmg
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 605);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 13);
-            this.label23.TabIndex = 14;
-            this.label23.Text = "Schaden: 0%";
+            this.data_tyre_rl_dmg.AutoSize = true;
+            this.data_tyre_rl_dmg.Location = new System.Drawing.Point(6, 605);
+            this.data_tyre_rl_dmg.Name = "data_tyre_rl_dmg";
+            this.data_tyre_rl_dmg.Size = new System.Drawing.Size(70, 13);
+            this.data_tyre_rl_dmg.TabIndex = 14;
+            this.data_tyre_rl_dmg.Text = "Schaden: 0%";
             // 
-            // label24
+            // data_tyre_fr_dmg
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(443, 142);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(70, 13);
-            this.label24.TabIndex = 15;
-            this.label24.Text = "Schaden: 0%";
+            this.data_tyre_fr_dmg.AutoSize = true;
+            this.data_tyre_fr_dmg.Location = new System.Drawing.Point(443, 142);
+            this.data_tyre_fr_dmg.Name = "data_tyre_fr_dmg";
+            this.data_tyre_fr_dmg.Size = new System.Drawing.Size(70, 13);
+            this.data_tyre_fr_dmg.TabIndex = 15;
+            this.data_tyre_fr_dmg.Text = "Schaden: 0%";
             // 
-            // label25
+            // data_tyre_fl_wear
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 130);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(76, 13);
-            this.label25.TabIndex = 16;
-            this.label25.Text = "Verbrauch: 0%";
+            this.data_tyre_fl_wear.AutoSize = true;
+            this.data_tyre_fl_wear.Location = new System.Drawing.Point(6, 130);
+            this.data_tyre_fl_wear.Name = "data_tyre_fl_wear";
+            this.data_tyre_fl_wear.Size = new System.Drawing.Size(76, 13);
+            this.data_tyre_fl_wear.TabIndex = 16;
+            this.data_tyre_fl_wear.Text = "Verbrauch: 0%";
             // 
-            // label26
+            // data_tyre_rr_wear
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(437, 592);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(76, 13);
-            this.label26.TabIndex = 17;
-            this.label26.Text = "Verbrauch: 0%";
+            this.data_tyre_rr_wear.AutoSize = true;
+            this.data_tyre_rr_wear.Location = new System.Drawing.Point(437, 592);
+            this.data_tyre_rr_wear.Name = "data_tyre_rr_wear";
+            this.data_tyre_rr_wear.Size = new System.Drawing.Size(76, 13);
+            this.data_tyre_rr_wear.TabIndex = 17;
+            this.data_tyre_rr_wear.Text = "Verbrauch: 0%";
             // 
-            // label27
+            // data_tyre_rl_wear
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 592);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(76, 13);
-            this.label27.TabIndex = 18;
-            this.label27.Text = "Verbrauch: 0%";
+            this.data_tyre_rl_wear.AutoSize = true;
+            this.data_tyre_rl_wear.Location = new System.Drawing.Point(6, 592);
+            this.data_tyre_rl_wear.Name = "data_tyre_rl_wear";
+            this.data_tyre_rl_wear.Size = new System.Drawing.Size(76, 13);
+            this.data_tyre_rl_wear.TabIndex = 18;
+            this.data_tyre_rl_wear.Text = "Verbrauch: 0%";
             // 
-            // label28
+            // data_tyre_fr_wear
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(437, 131);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(76, 13);
-            this.label28.TabIndex = 19;
-            this.label28.Text = "Verbrauch: 0%";
+            this.data_tyre_fr_wear.AutoSize = true;
+            this.data_tyre_fr_wear.Location = new System.Drawing.Point(437, 131);
+            this.data_tyre_fr_wear.Name = "data_tyre_fr_wear";
+            this.data_tyre_fr_wear.Size = new System.Drawing.Size(76, 13);
+            this.data_tyre_fr_wear.TabIndex = 19;
+            this.data_tyre_fr_wear.Text = "Verbrauch: 0%";
             // 
-            // label29
+            // data_tyre_fl_temp
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 117);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(93, 13);
-            this.label29.TabIndex = 20;
-            this.label29.Text = "Temperatur: 80 °C";
+            this.data_tyre_fl_temp.AutoSize = true;
+            this.data_tyre_fl_temp.Location = new System.Drawing.Point(6, 117);
+            this.data_tyre_fl_temp.Name = "data_tyre_fl_temp";
+            this.data_tyre_fl_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_tyre_fl_temp.TabIndex = 20;
+            this.data_tyre_fl_temp.Text = "Temperatur: 80 °C";
             // 
-            // label30
+            // data_tyre_rr_temp
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(420, 579);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(93, 13);
-            this.label30.TabIndex = 21;
-            this.label30.Text = "Temperatur: 80 °C";
+            this.data_tyre_rr_temp.AutoSize = true;
+            this.data_tyre_rr_temp.Location = new System.Drawing.Point(420, 579);
+            this.data_tyre_rr_temp.Name = "data_tyre_rr_temp";
+            this.data_tyre_rr_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_tyre_rr_temp.TabIndex = 21;
+            this.data_tyre_rr_temp.Text = "Temperatur: 80 °C";
             // 
-            // label31
+            // data_tyre_rl_temp
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 579);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(93, 13);
-            this.label31.TabIndex = 22;
-            this.label31.Text = "Temperatur: 80 °C";
+            this.data_tyre_rl_temp.AutoSize = true;
+            this.data_tyre_rl_temp.Location = new System.Drawing.Point(6, 579);
+            this.data_tyre_rl_temp.Name = "data_tyre_rl_temp";
+            this.data_tyre_rl_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_tyre_rl_temp.TabIndex = 22;
+            this.data_tyre_rl_temp.Text = "Temperatur: 80 °C";
             // 
-            // label32
+            // data_tyre_fr_temp
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(420, 117);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(93, 13);
-            this.label32.TabIndex = 23;
-            this.label32.Text = "Temperatur: 80 °C";
+            this.data_tyre_fr_temp.AutoSize = true;
+            this.data_tyre_fr_temp.Location = new System.Drawing.Point(420, 117);
+            this.data_tyre_fr_temp.Name = "data_tyre_fr_temp";
+            this.data_tyre_fr_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_tyre_fr_temp.TabIndex = 23;
+            this.data_tyre_fr_temp.Text = "Temperatur: 80 °C";
             // 
-            // label33
+            // data_tyre_fr_psi
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(439, 104);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(74, 13);
-            this.label33.TabIndex = 24;
-            this.label33.Text = "Druck: 23 PSI";
+            this.data_tyre_fr_psi.AutoSize = true;
+            this.data_tyre_fr_psi.Location = new System.Drawing.Point(439, 104);
+            this.data_tyre_fr_psi.Name = "data_tyre_fr_psi";
+            this.data_tyre_fr_psi.Size = new System.Drawing.Size(74, 13);
+            this.data_tyre_fr_psi.TabIndex = 24;
+            this.data_tyre_fr_psi.Text = "Druck: 23 PSI";
             // 
-            // label34
+            // data_tyre_fl_psi
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 104);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(74, 13);
-            this.label34.TabIndex = 25;
-            this.label34.Text = "Druck: 23 PSI";
+            this.data_tyre_fl_psi.AutoSize = true;
+            this.data_tyre_fl_psi.Location = new System.Drawing.Point(6, 104);
+            this.data_tyre_fl_psi.Name = "data_tyre_fl_psi";
+            this.data_tyre_fl_psi.Size = new System.Drawing.Size(74, 13);
+            this.data_tyre_fl_psi.TabIndex = 25;
+            this.data_tyre_fl_psi.Text = "Druck: 23 PSI";
             // 
-            // label35
+            // data_tyre_rr_psi
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(430, 566);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(83, 13);
-            this.label35.TabIndex = 26;
-            this.label35.Text = "Druck: 21.5 PSI";
+            this.data_tyre_rr_psi.AutoSize = true;
+            this.data_tyre_rr_psi.Location = new System.Drawing.Point(430, 566);
+            this.data_tyre_rr_psi.Name = "data_tyre_rr_psi";
+            this.data_tyre_rr_psi.Size = new System.Drawing.Size(83, 13);
+            this.data_tyre_rr_psi.TabIndex = 26;
+            this.data_tyre_rr_psi.Text = "Druck: 21.5 PSI";
             // 
-            // label36
+            // data_tyre_rl_psi
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 566);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(83, 13);
-            this.label36.TabIndex = 27;
-            this.label36.Text = "Druck: 21.5 PSI";
+            this.data_tyre_rl_psi.AutoSize = true;
+            this.data_tyre_rl_psi.Location = new System.Drawing.Point(6, 566);
+            this.data_tyre_rl_psi.Name = "data_tyre_rl_psi";
+            this.data_tyre_rl_psi.Size = new System.Drawing.Size(83, 13);
+            this.data_tyre_rl_psi.TabIndex = 27;
+            this.data_tyre_rl_psi.Text = "Druck: 21.5 PSI";
             // 
             // label37
             // 
@@ -2489,111 +2535,545 @@
             this.label47.TabIndex = 36;
             this.label47.Text = "Bremsen";
             // 
-            // label48
+            // data_brake_fl_temp
             // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(6, 185);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(93, 13);
-            this.label48.TabIndex = 37;
-            this.label48.Text = "Temperatur: 80 °C";
+            this.data_brake_fl_temp.AutoSize = true;
+            this.data_brake_fl_temp.Location = new System.Drawing.Point(6, 185);
+            this.data_brake_fl_temp.Name = "data_brake_fl_temp";
+            this.data_brake_fl_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_fl_temp.TabIndex = 37;
+            this.data_brake_fl_temp.Text = "Temperatur: 80 °C";
             // 
-            // label49
+            // data_brake_fr_temp
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(420, 185);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(93, 13);
-            this.label49.TabIndex = 38;
-            this.label49.Text = "Temperatur: 80 °C";
+            this.data_brake_fr_temp.AutoSize = true;
+            this.data_brake_fr_temp.Location = new System.Drawing.Point(420, 185);
+            this.data_brake_fr_temp.Name = "data_brake_fr_temp";
+            this.data_brake_fr_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_fr_temp.TabIndex = 38;
+            this.data_brake_fr_temp.Text = "Temperatur: 80 °C";
             // 
-            // label50
+            // data_brake_rl_temp
             // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(6, 648);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(93, 13);
-            this.label50.TabIndex = 39;
-            this.label50.Text = "Temperatur: 80 °C";
+            this.data_brake_rl_temp.AutoSize = true;
+            this.data_brake_rl_temp.Location = new System.Drawing.Point(6, 648);
+            this.data_brake_rl_temp.Name = "data_brake_rl_temp";
+            this.data_brake_rl_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_rl_temp.TabIndex = 39;
+            this.data_brake_rl_temp.Text = "Temperatur: 80 °C";
             // 
-            // label51
+            // data_brake_rr_temp
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(420, 648);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(93, 13);
-            this.label51.TabIndex = 40;
-            this.label51.Text = "Temperatur: 80 °C";
+            this.data_brake_rr_temp.AutoSize = true;
+            this.data_brake_rr_temp.Location = new System.Drawing.Point(420, 648);
+            this.data_brake_rr_temp.Name = "data_brake_rr_temp";
+            this.data_brake_rr_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_rr_temp.TabIndex = 40;
+            this.data_brake_rr_temp.Text = "Temperatur: 80 °C";
             // 
-            // label52
+            // data_brake_fl_bias
             // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(6, 198);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(101, 13);
-            this.label52.TabIndex = 41;
-            this.label52.Text = "Kraftverteilung: 50%";
+            this.data_brake_fl_bias.AutoSize = true;
+            this.data_brake_fl_bias.Location = new System.Drawing.Point(6, 198);
+            this.data_brake_fl_bias.Name = "data_brake_fl_bias";
+            this.data_brake_fl_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_fl_bias.TabIndex = 41;
+            this.data_brake_fl_bias.Text = "Kraftverteilung: 50%";
             // 
-            // label53
+            // data_brake_fr_bias
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(412, 198);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(101, 13);
-            this.label53.TabIndex = 42;
-            this.label53.Text = "Kraftverteilung: 50%";
+            this.data_brake_fr_bias.AutoSize = true;
+            this.data_brake_fr_bias.Location = new System.Drawing.Point(412, 198);
+            this.data_brake_fr_bias.Name = "data_brake_fr_bias";
+            this.data_brake_fr_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_fr_bias.TabIndex = 42;
+            this.data_brake_fr_bias.Text = "Kraftverteilung: 50%";
             // 
-            // label54
+            // data_brake_rl_bias
             // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(6, 661);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(101, 13);
-            this.label54.TabIndex = 43;
-            this.label54.Text = "Kraftverteilung: 50%";
+            this.data_brake_rl_bias.AutoSize = true;
+            this.data_brake_rl_bias.Location = new System.Drawing.Point(6, 661);
+            this.data_brake_rl_bias.Name = "data_brake_rl_bias";
+            this.data_brake_rl_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_rl_bias.TabIndex = 43;
+            this.data_brake_rl_bias.Text = "Kraftverteilung: 50%";
             // 
-            // label55
+            // data_brake_rr_bias
             // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(412, 661);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(101, 13);
-            this.label55.TabIndex = 44;
-            this.label55.Text = "Kraftverteilung: 50%";
+            this.data_brake_rr_bias.AutoSize = true;
+            this.data_brake_rr_bias.Location = new System.Drawing.Point(412, 661);
+            this.data_brake_rr_bias.Name = "data_brake_rr_bias";
+            this.data_brake_rr_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_rr_bias.TabIndex = 44;
+            this.data_brake_rr_bias.Text = "Kraftverteilung: 50%";
             // 
-            // label56
+            // data_fuel
             // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(6, 395);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(93, 13);
-            this.label56.TabIndex = 45;
-            this.label56.Text = "Treibstoff: 43.0 kg";
+            this.data_fuel.AutoSize = true;
+            this.data_fuel.Location = new System.Drawing.Point(6, 395);
+            this.data_fuel.Name = "data_fuel";
+            this.data_fuel.Size = new System.Drawing.Size(93, 13);
+            this.data_fuel.TabIndex = 45;
+            this.data_fuel.Text = "Treibstoff: 43.0 kg";
             // 
-            // label57
+            // data_traction
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(6, 379);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(118, 13);
-            this.label57.TabIndex = 46;
-            this.label57.Text = "Traktionkontrolle: 100%";
+            this.data_traction.AutoSize = true;
+            this.data_traction.Location = new System.Drawing.Point(6, 379);
+            this.data_traction.Name = "data_traction";
+            this.data_traction.Size = new System.Drawing.Size(118, 13);
+            this.data_traction.TabIndex = 46;
+            this.data_traction.Text = "Traktionkontrolle: 100%";
             // 
-            // label58
+            // data_abs
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(6, 366);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(49, 13);
-            this.label58.TabIndex = 47;
-            this.label58.Text = "ABS: Ein";
+            this.data_abs.AutoSize = true;
+            this.data_abs.Location = new System.Drawing.Point(6, 366);
+            this.data_abs.Name = "data_abs";
+            this.data_abs.Size = new System.Drawing.Size(49, 13);
+            this.data_abs.TabIndex = 47;
+            this.data_abs.Text = "ABS: Ein";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label68);
+            this.groupBox4.Controls.Add(this.label67);
+            this.groupBox4.Controls.Add(this.data_flag);
+            this.groupBox4.Controls.Add(this.label66);
+            this.groupBox4.Controls.Add(this.label65);
+            this.groupBox4.Controls.Add(this.label64);
+            this.groupBox4.Controls.Add(this.label63);
+            this.groupBox4.Controls.Add(this.label62);
+            this.groupBox4.Controls.Add(this.label61);
+            this.groupBox4.Controls.Add(this.label60);
+            this.groupBox4.Controls.Add(this.label59);
+            this.groupBox4.Location = new System.Drawing.Point(8, 201);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(375, 530);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Renndaten";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(6, 16);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(74, 13);
+            this.label59.TabIndex = 0;
+            this.label59.Text = "Runde: 1 / 58";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(120, 16);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(56, 13);
+            this.label60.TabIndex = 1;
+            this.label60.Text = "Position: 1";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(3, 280);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(50, 13);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "Sektor: 1";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(3, 326);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(50, 13);
+            this.label62.TabIndex = 3;
+            this.label62.Text = "Sektor 3:";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(3, 313);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(50, 13);
+            this.label63.TabIndex = 4;
+            this.label63.Text = "Sektor 2:";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(3, 300);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(50, 13);
+            this.label64.TabIndex = 5;
+            this.label64.Text = "Sektor 1:";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(201, 280);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(64, 13);
+            this.label65.TabIndex = 6;
+            this.label65.Text = "Rundenzeit:";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(214, 14);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(71, 17);
+            this.label66.TabIndex = 7;
+            this.label66.Text = "Qualifying";
+            // 
+            // data_flag
+            // 
+            this.data_flag.BackColor = System.Drawing.Color.Green;
+            this.data_flag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_flag.Location = new System.Drawing.Point(291, 11);
+            this.data_flag.Name = "data_flag";
+            this.data_flag.Size = new System.Drawing.Size(79, 27);
+            this.data_flag.TabIndex = 8;
+            this.data_flag.Text = "Green";
+            this.data_flag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(169, 300);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(96, 13);
+            this.label67.TabIndex = 9;
+            this.label67.Text = "Letzte Rundenzeit:";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(6, 58);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(146, 13);
+            this.label68.TabIndex = 10;
+            this.label68.Text = "Treibstoffmodus: Standard (2)";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label96);
+            this.groupBox5.Controls.Add(this.label94);
+            this.groupBox5.Controls.Add(this.label95);
+            this.groupBox5.Controls.Add(this.label93);
+            this.groupBox5.Controls.Add(this.label92);
+            this.groupBox5.Controls.Add(this.label91);
+            this.groupBox5.Controls.Add(this.label90);
+            this.groupBox5.Controls.Add(this.label89);
+            this.groupBox5.Controls.Add(this.label88);
+            this.groupBox5.Controls.Add(this.label87);
+            this.groupBox5.Controls.Add(this.label86);
+            this.groupBox5.Controls.Add(this.label85);
+            this.groupBox5.Controls.Add(this.label84);
+            this.groupBox5.Controls.Add(this.label83);
+            this.groupBox5.Controls.Add(this.label82);
+            this.groupBox5.Controls.Add(this.label81);
+            this.groupBox5.Controls.Add(this.label80);
+            this.groupBox5.Controls.Add(this.label79);
+            this.groupBox5.Controls.Add(this.label78);
+            this.groupBox5.Controls.Add(this.label77);
+            this.groupBox5.Controls.Add(this.label76);
+            this.groupBox5.Controls.Add(this.label75);
+            this.groupBox5.Controls.Add(this.label74);
+            this.groupBox5.Controls.Add(this.label73);
+            this.groupBox5.Controls.Add(this.label72);
+            this.groupBox5.Controls.Add(this.label71);
+            this.groupBox5.Controls.Add(this.label70);
+            this.groupBox5.Controls.Add(this.label69);
+            this.groupBox5.Enabled = false;
+            this.groupBox5.Location = new System.Drawing.Point(945, 22);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(419, 740);
+            this.groupBox5.TabIndex = 11;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Rennübersicht";
+            this.groupBox5.Visible = false;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(12, 34);
+            this.label69.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(13, 13);
+            this.label69.TabIndex = 0;
+            this.label69.Text = "1";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(12, 52);
+            this.label70.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(13, 13);
+            this.label70.TabIndex = 1;
+            this.label70.Text = "2";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(12, 70);
+            this.label71.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(13, 13);
+            this.label71.TabIndex = 2;
+            this.label71.Text = "3";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(12, 88);
+            this.label72.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(13, 13);
+            this.label72.TabIndex = 3;
+            this.label72.Text = "4";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(12, 106);
+            this.label73.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(13, 13);
+            this.label73.TabIndex = 4;
+            this.label73.Text = "5";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(12, 124);
+            this.label74.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(13, 13);
+            this.label74.TabIndex = 5;
+            this.label74.Text = "6";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(12, 142);
+            this.label75.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(13, 13);
+            this.label75.TabIndex = 6;
+            this.label75.Text = "7";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(12, 160);
+            this.label76.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(13, 13);
+            this.label76.TabIndex = 7;
+            this.label76.Text = "8";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(12, 178);
+            this.label77.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(13, 13);
+            this.label77.TabIndex = 8;
+            this.label77.Text = "9";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(6, 196);
+            this.label78.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(19, 13);
+            this.label78.TabIndex = 9;
+            this.label78.Text = "10";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(6, 214);
+            this.label79.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(19, 13);
+            this.label79.TabIndex = 10;
+            this.label79.Text = "11";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(6, 232);
+            this.label80.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(19, 13);
+            this.label80.TabIndex = 11;
+            this.label80.Text = "12";
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(6, 250);
+            this.label81.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(19, 13);
+            this.label81.TabIndex = 12;
+            this.label81.Text = "13";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(6, 268);
+            this.label82.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(19, 13);
+            this.label82.TabIndex = 13;
+            this.label82.Text = "14";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(6, 286);
+            this.label83.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(19, 13);
+            this.label83.TabIndex = 14;
+            this.label83.Text = "15";
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(6, 304);
+            this.label84.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(19, 13);
+            this.label84.TabIndex = 15;
+            this.label84.Text = "16";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(6, 322);
+            this.label85.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(19, 13);
+            this.label85.TabIndex = 16;
+            this.label85.Text = "17";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(6, 340);
+            this.label86.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(19, 13);
+            this.label86.TabIndex = 17;
+            this.label86.Text = "18";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(6, 358);
+            this.label87.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(19, 13);
+            this.label87.TabIndex = 18;
+            this.label87.Text = "19";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(6, 376);
+            this.label88.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(19, 13);
+            this.label88.TabIndex = 19;
+            this.label88.Text = "20";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(31, 34);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(31, 13);
+            this.label89.TabIndex = 20;
+            this.label89.Text = "HAM";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(68, 34);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(54, 13);
+            this.label90.TabIndex = 21;
+            this.label90.Text = "Mercedes";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(12, 16);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(14, 13);
+            this.label91.TabIndex = 22;
+            this.label91.Text = "#";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(24, 16);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(38, 13);
+            this.label92.TabIndex = 23;
+            this.label92.Text = "NAME";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(68, 16);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(37, 13);
+            this.label93.TabIndex = 24;
+            this.label93.Text = "TEAM";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(154, 16);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(21, 13);
+            this.label95.TabIndex = 26;
+            this.label95.Text = "LR";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(209, 16);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(38, 13);
+            this.label94.TabIndex = 27;
+            this.label94.Text = "Reifen";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(284, 16);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(25, 13);
+            this.label96.TabIndex = 28;
+            this.label96.Text = "Box";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(938, 797);
+            this.ClientSize = new System.Drawing.Size(1369, 765);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -2611,6 +3091,10 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2786,17 +3270,17 @@
         private System.Windows.Forms.Label ThrottleBar;
         private System.Windows.Forms.Label BrakeBar;
         private System.Windows.Forms.Label data_drs;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label data_abs;
+        private System.Windows.Forms.Label data_traction;
+        private System.Windows.Forms.Label data_fuel;
+        private System.Windows.Forms.Label data_brake_rr_bias;
+        private System.Windows.Forms.Label data_brake_rl_bias;
+        private System.Windows.Forms.Label data_brake_fr_bias;
+        private System.Windows.Forms.Label data_brake_fl_bias;
+        private System.Windows.Forms.Label data_brake_rr_temp;
+        private System.Windows.Forms.Label data_brake_rl_temp;
+        private System.Windows.Forms.Label data_brake_fr_temp;
+        private System.Windows.Forms.Label data_brake_fl_temp;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
@@ -2808,34 +3292,75 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label data_tyre_rl_psi;
+        private System.Windows.Forms.Label data_tyre_rr_psi;
+        private System.Windows.Forms.Label data_tyre_fl_psi;
+        private System.Windows.Forms.Label data_tyre_fr_psi;
+        private System.Windows.Forms.Label data_tyre_fr_temp;
+        private System.Windows.Forms.Label data_tyre_rl_temp;
+        private System.Windows.Forms.Label data_tyre_rr_temp;
+        private System.Windows.Forms.Label data_tyre_fl_temp;
+        private System.Windows.Forms.Label data_tyre_fr_wear;
+        private System.Windows.Forms.Label data_tyre_rl_wear;
+        private System.Windows.Forms.Label data_tyre_rr_wear;
+        private System.Windows.Forms.Label data_tyre_fl_wear;
+        private System.Windows.Forms.Label data_tyre_fr_dmg;
+        private System.Windows.Forms.Label data_tyre_rl_dmg;
+        private System.Windows.Forms.Label data_tyre_rr_dmg;
+        private System.Windows.Forms.Label data_tyre_fl_dmg;
+        private System.Windows.Forms.Label type;
+        private System.Windows.Forms.Label data_tyre_rl_type;
+        private System.Windows.Forms.Label data_tyre_fr_type;
+        private System.Windows.Forms.Label data_tyre_fl_type;
+        private System.Windows.Forms.Label data_rw;
+        private System.Windows.Forms.Label data_engine_temp;
+        private System.Windows.Forms.Label data_exhaust;
+        private System.Windows.Forms.Label data_gear_dmg;
+        private System.Windows.Forms.Label data_engine_dmg;
+        private System.Windows.Forms.Label data_fw_l;
+        private System.Windows.Forms.Label data_fw_r;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label data_flag;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label94;
     }
 }
 

@@ -65,10 +65,24 @@ namespace Telemetry
             Sector = info.GetValue<float>("Sector");
             Sector1_Time = info.GetValue<float>("Sector1_Time");
             Sector2_Time = info.GetValue<float>("Sector2_Time");
+            
+            //brake_temp = new float[4];
+            /*
+            brake_temp[0] = info.GetValue<float>("brake_temp_rl");
+            brake_temp[1] = info.GetValue<float>("brake_temp_rr");
+            brake_temp[2] = info.GetValue<float>("brake_temp_fl");
+            brake_temp[3] = info.GetValue<float>("brake_temp_fr");
+            */
             brake_temp_rl = info.GetValue<float>("brake_temp_rl");
             brake_temp_rr = info.GetValue<float>("brake_temp_rr");
             brake_temp_fl = info.GetValue<float>("brake_temp_fl");
             brake_temp_fr = info.GetValue<float>("brake_temp_fr");
+            /*
+            brake_temp[0] = brake_temp_rl;
+            brake_temp[1] = brake_temp_rr;
+            brake_temp[2] = brake_temp_fl;
+            brake_temp[3] = brake_temp_fr;
+            */
             wheels_pressure_rl = info.GetValue<float>("wheels_pressure_rl");
             wheels_pressure_rr = info.GetValue<float>("wheels_pressure_rr");
             wheels_pressure_fl = info.GetValue<float>("wheels_pressure_fl");
@@ -84,6 +98,14 @@ namespace Telemetry
             DRS_Allowed = info.GetValue<float>("DRS_Allowed");
             TrackNumber = info.GetValue<float>("TrackNumber");
             FIAFlag = info.GetValue<float>("FIAFlag");
+            /*
+            Era = info.GetValue<float>("Era");
+            Engine_Temp = info.GetValue<float>("Engine_Temp");
+            gforce_vert = info.GetValue<float>("gforce_vert");
+            ang_vel_x = info.GetValue<float>("ang_vel_x");
+            ang_vel_y = info.GetValue<float>("ang_vel_y");
+            ang_vel_z = info.GetValue<float>("ang_vel_z");
+            */
 
             // = info.GetValue<float>("");
         }
@@ -144,10 +166,13 @@ namespace Telemetry
         public float Sector;
         public float Sector1_Time;
         public float Sector2_Time;
-        public float brake_temp_rl;
-        public float brake_temp_rr;
-        public float brake_temp_fl;
-        public float brake_temp_fr;
+        //public float[] brake_temp;
+        
+        private float brake_temp_rl;
+        private float brake_temp_rr;
+        private float brake_temp_fl;
+        private float brake_temp_fr;
+        
         public float wheels_pressure_rl;
         public float wheels_pressure_rr;
         public float wheels_pressure_fl;
@@ -163,11 +188,52 @@ namespace Telemetry
         public float DRS_Allowed;
         public float TrackNumber;
         public float FIAFlag;
+        /*
+        public float Era;
+        public float Engine_Temp;
+        public float gforce_vert;
+        public float ang_vel_x;
+        public float ang_vel_y;
+        public float ang_vel_z;
+        public byte tyre_temp_rl;
+        public byte tyre_temp_rr;
+        public byte tyre_temp_fl;
+        public byte tyre_temp_fr;
+        public byte tyre_wear_rl;
+        public byte tyre_wear_rr;
+        public byte tyre_wear_fl;
+        public byte tyre_wear_fr;
+        public byte tyre_type;
+        public byte brake_bias;
+        public byte fuel_mix;
+        public byte currentLapInvalid;
+        public byte tyre_dmg_rl;
+        public byte tyre_dmg_rr;
+        public byte tyre_dmg_fl;
+        public byte tyre_dmg_fr;
+        public byte frontwing_dmg_left;
+        public byte frontwing_dmg_right;
+        public byte rearwing_dmg;
+        public byte engine_dmg;
+        public byte gear_dmg;
+        public byte exhaust_dmg;
+        public byte pit_limiter;
+        public byte pit_limit_speed;
+        */
+        // Car Data
+        //public byte num_cars;
+        //public byte player_car_index;
 
         public float SpeedInKMH
         {
             get { return Speed * 3.60f; }
         }
+
+        public float[] brake_temp
+        {
+            get { return new float[4] { brake_temp_rl, brake_temp_rr, brake_temp_fl, brake_temp_fr }; }
+        }
+        
 
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -223,10 +289,19 @@ namespace Telemetry
             info.AddValue("Sector", Sector);
             info.AddValue("Sector1_Time", Sector1_Time);
             info.AddValue("Sector2_Time", Sector2_Time);
+            //brake_temp = new float[4];
+            /*
+            info.AddValue("brake_temp_rl", brake_temp[0]);
+            info.AddValue("brake_temp_rr", brake_temp[1]);
+            info.AddValue("brake_temp_fl", brake_temp[2]);
+            info.AddValue("brake_temp_fr", brake_temp[3]);
+            */
+            
             info.AddValue("brake_temp_rl", brake_temp_rl);
             info.AddValue("brake_temp_rr", brake_temp_rr);
             info.AddValue("brake_temp_fl", brake_temp_fl);
             info.AddValue("brake_temp_fr", brake_temp_fr);
+            
             info.AddValue("wheels_pressure_rl", wheels_pressure_rl);
             info.AddValue("wheels_pressure_rr", wheels_pressure_rr);
             info.AddValue("wheels_pressure_fl", wheels_pressure_fl);
@@ -242,6 +317,14 @@ namespace Telemetry
             info.AddValue("DRS_Allowed", DRS_Allowed);
             info.AddValue("TrackNumber", TrackNumber);
             info.AddValue("FIAFlag", FIAFlag);
+            /*
+            info.AddValue("Era", Era);
+            info.AddValue("Engine_Temp", Engine_Temp);
+            info.AddValue("geforce_vert", gforce_vert);
+            info.AddValue("ang_vel_x", ang_vel_x);
+            info.AddValue("ang_vel_y", ang_vel_y);
+            info.AddValue("ang_vel_z", ang_vel_z);
+            */
             //info.AddValue("", );
         }
     }

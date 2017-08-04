@@ -99,21 +99,47 @@ namespace Telemetry
         {
             timer1.Stop();
             Monitor.Enter(syncObj);
-            update_raceinfo();
-            Window2();
-            UpdateThrottleBreak(latestData.Throttle, latestData.Brake);
-            //Speed RPM & Gear
-            data_gear.Text = manager.CurrentGear(latestData.Gear);
-            data_rpm.Text = latestData.RPM.ToString("0");
-            data_speed.Text = latestData.SpeedInKMH.ToString("0");
-            //DRS
-            if ((latestData.DRS == 0) && (latestData.DRS_Allowed == 0))
-                data_drs.ForeColor = System.Drawing.Color.Gray;
-            else if (latestData.DRS_Allowed == 1)
-                data_drs.ForeColor = System.Drawing.Color.Orange;
-            else if (latestData.DRS == 1)
-                data_drs.ForeColor = System.Drawing.Color.Green;
-
+            //if (latestData.brake_temp != null)
+            //{
+                update_raceinfo();
+                Window2();
+                UpdateThrottleBreak(latestData.Throttle, latestData.Brake);
+                //Speed RPM & Gear
+                data_gear.Text = manager.CurrentGear(latestData.Gear);
+                data_rpm.Text = latestData.RPM.ToString("0");
+                data_speed.Text = latestData.SpeedInKMH.ToString("0");
+                //DRS 
+                if (latestData.DRS_Allowed == 1)
+                    data_drs.ForeColor = System.Drawing.Color.Orange;
+                else if (latestData.DRS == 1)
+                    data_drs.ForeColor = System.Drawing.Color.Green;
+                else
+                    data_drs.ForeColor = System.Drawing.Color.Gray;
+                //FIA Flag
+                switch ((int)latestData.FIAFlag)
+                {
+                    case 1:
+                        data_flag.Text = "Green";
+                        data_flag.ForeColor = System.Drawing.Color.Green;
+                        break;
+                    case 2:
+                        data_flag.Text = "Blue";
+                        data_flag.ForeColor = System.Drawing.Color.Blue;
+                        break;
+                    case 3:
+                        data_flag.Text = "Yellow";
+                        data_flag.ForeColor = System.Drawing.Color.Yellow;
+                        break;
+                    case 4:
+                        data_flag.Text = "Red";
+                        data_flag.ForeColor = System.Drawing.Color.Red;
+                        break;
+                    default:
+                        data_flag.Text = "";
+                        data_flag.ForeColor = System.Drawing.Color.Gray;
+                        break;
+                }
+            //}
             Monitor.Exit(syncObj);
             timer1.Start();
         }
@@ -183,10 +209,19 @@ namespace Telemetry
             sector.Text = latestData.Sector.ToString();
             sector1.Text = latestData.Sector1_Time.ToString();
             sector2.Text = latestData.Sector2_Time.ToString();
+            if (latestData.brake_temp != null)
+            {
+                braketemp_rl.Text = latestData.brake_temp[0].ToString();
+                braketemp_rr.Text = latestData.brake_temp[1].ToString();
+                braketemp_fl.Text = latestData.brake_temp[2].ToString();
+                braketemp_fr.Text = latestData.brake_temp[3].ToString();
+            }
+            /*
             braketemp_rl.Text = latestData.brake_temp_rl.ToString();
             braketemp_rr.Text = latestData.brake_temp_rr.ToString();
             braketemp_fl.Text = latestData.brake_temp_fl.ToString();
             braketemp_fr.Text = latestData.brake_temp_fr.ToString();
+            */
             wheelpsi_rl.Text = latestData.wheels_pressure_rl.ToString();
             wheelpsi_rr.Text = latestData.wheels_pressure_rr.ToString();
             wheelpsi_fl.Text = latestData.wheels_pressure_fl.ToString();
