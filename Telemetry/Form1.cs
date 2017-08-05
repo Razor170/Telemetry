@@ -99,47 +99,8 @@ namespace Telemetry
         {
             timer1.Stop();
             Monitor.Enter(syncObj);
-            //if (latestData.brake_temp != null)
-            //{
-                update_raceinfo();
-                Window2();
-                UpdateThrottleBreak(latestData.Throttle, latestData.Brake);
-                //Speed RPM & Gear
-                data_gear.Text = manager.CurrentGear(latestData.Gear);
-                data_rpm.Text = latestData.RPM.ToString("0");
-                data_speed.Text = latestData.SpeedInKMH.ToString("0");
-                //DRS 
-                if (latestData.DRS_Allowed == 1)
-                    data_drs.ForeColor = System.Drawing.Color.Orange;
-                else if (latestData.DRS == 1)
-                    data_drs.ForeColor = System.Drawing.Color.Green;
-                else
-                    data_drs.ForeColor = System.Drawing.Color.Gray;
-                //FIA Flag
-                switch ((int)latestData.FIAFlag)
-                {
-                    case 1:
-                        data_flag.Text = "Green";
-                        data_flag.ForeColor = System.Drawing.Color.Green;
-                        break;
-                    case 2:
-                        data_flag.Text = "Blue";
-                        data_flag.ForeColor = System.Drawing.Color.Blue;
-                        break;
-                    case 3:
-                        data_flag.Text = "Yellow";
-                        data_flag.ForeColor = System.Drawing.Color.Yellow;
-                        break;
-                    case 4:
-                        data_flag.Text = "Red";
-                        data_flag.ForeColor = System.Drawing.Color.Red;
-                        break;
-                    default:
-                        data_flag.Text = "";
-                        data_flag.ForeColor = System.Drawing.Color.Gray;
-                        break;
-                }
-            //}
+            update_raceinfo();
+            Window2();
             Monitor.Exit(syncObj);
             timer1.Start();
         }
@@ -156,7 +117,7 @@ namespace Telemetry
         }
         
 
-        private void update_raceinfo()
+        private unsafe void update_raceinfo()
         {
             time.Text = latestData.Time.ToString();
             laptime.Text = latestData.LapTime.ToString();
@@ -175,18 +136,27 @@ namespace Telemetry
             fdx.Text = latestData.FDX.ToString();
             fdy.Text = latestData.FDY.ToString();
             fdz.Text = latestData.FDZ.ToString();
-            susp_pos_rl.Text = latestData.susp_pos_rl.ToString();
-            susp_pos_rr.Text = latestData.susp_pos_rr.ToString();
-            susp_pos_fl.Text = latestData.susp_pos_fl.ToString();
-            susp_pos_fr.Text = latestData.susp_pos_fr.ToString();
-            susp_vel_rl.Text = latestData.susp_vel_rl.ToString();
-            susp_vel_rr.Text = latestData.susp_vel_rr.ToString();
-            susp_vel_fl.Text = latestData.susp_vel_fl.ToString();
-            susp_vel_fr.Text = latestData.susp_vel_fr.ToString();
-            wheelspeed_rl.Text = latestData.wheelspeed_rl.ToString();
-            wheelspeed_rr.Text = latestData.wheelspeed_rr.ToString();
-            wheelspeed_fl.Text = latestData.wheelspeed_fl.ToString();
-            wheelspeed_fr.Text = latestData.wheelspeed_fr.ToString();
+            if (latestData.susp_pos != null)
+            {
+                susp_pos_rl.Text = latestData.susp_pos[0].ToString();
+                susp_pos_rr.Text = latestData.susp_pos[1].ToString();
+                susp_pos_fl.Text = latestData.susp_pos[2].ToString();
+                susp_pos_fr.Text = latestData.susp_pos[3].ToString();
+            };
+            if (latestData.susp_vel != null)
+            {
+                susp_vel_rl.Text = latestData.susp_vel[0].ToString();
+                susp_vel_rr.Text = latestData.susp_vel[1].ToString();
+                susp_vel_fl.Text = latestData.susp_vel[2].ToString();
+                susp_vel_fr.Text = latestData.susp_vel[3].ToString();
+            };
+            if (latestData.wheel_speed != null)
+            {
+                wheelspeed_rl.Text = latestData.wheel_speed[0].ToString();
+                wheelspeed_rr.Text = latestData.wheel_speed[1].ToString();
+                wheelspeed_fl.Text = latestData.wheel_speed[2].ToString();
+                wheelspeed_fr.Text = latestData.wheel_speed[3].ToString();
+            };
             throttle.Text = latestData.Throttle.ToString();
             steer.Text = latestData.Steer.ToString();
             brake.Text = latestData.Brake.ToString();
@@ -215,17 +185,14 @@ namespace Telemetry
                 braketemp_rr.Text = latestData.brake_temp[1].ToString();
                 braketemp_fl.Text = latestData.brake_temp[2].ToString();
                 braketemp_fr.Text = latestData.brake_temp[3].ToString();
-            }
-            /*
-            braketemp_rl.Text = latestData.brake_temp_rl.ToString();
-            braketemp_rr.Text = latestData.brake_temp_rr.ToString();
-            braketemp_fl.Text = latestData.brake_temp_fl.ToString();
-            braketemp_fr.Text = latestData.brake_temp_fr.ToString();
-            */
-            wheelpsi_rl.Text = latestData.wheels_pressure_rl.ToString();
-            wheelpsi_rr.Text = latestData.wheels_pressure_rr.ToString();
-            wheelpsi_fl.Text = latestData.wheels_pressure_fl.ToString();
-            wheelpsi_fr.Text = latestData.wheels_pressure_fr.ToString();
+            };
+            if (latestData.wheel_pressure != null)
+            {
+                wheelpsi_rl.Text = latestData.wheel_pressure[0].ToString();
+                wheelpsi_rr.Text = latestData.wheel_pressure[1].ToString();
+                wheelpsi_fl.Text = latestData.wheel_pressure[2].ToString();
+                wheelpsi_fr.Text = latestData.wheel_pressure[3].ToString();
+            };
             teamid.Text = latestData.Team_ID.ToString();
             totallaps.Text = latestData.Total_Laps.ToString();
             tracksize.Text = latestData.Track_Size.ToString();
@@ -249,269 +216,348 @@ namespace Telemetry
             circuit_pitspeed.Text = Circuits[(int)latestData.TrackNumber, 4];
             circuit_tyreuse.Text = Circuits[(int)latestData.TrackNumber, 5];
             circuit_drs.Text = Circuits[(int)latestData.TrackNumber, 6];
+            //Throttle
+            UpdateThrottleBreak(latestData.Throttle, latestData.Brake);
+            //Gear
+            data_gear.Text = manager.CurrentGear(latestData.Gear);
+            //RPM
+            data_rpm.Text = latestData.RPM.ToString("0");
+            //Speed
+            data_speed.Text = latestData.SpeedInKMH.ToString("0");
+            //DRS 
+            if (latestData.DRS_Allowed == 1)
+                data_drs.ForeColor = System.Drawing.Color.Orange;
+            else if (latestData.DRS == 1)
+                data_drs.ForeColor = System.Drawing.Color.Green;
+            else
+                data_drs.ForeColor = System.Drawing.Color.Gray;
+            //FIA Flag
+            switch ((int)latestData.FIAFlag)
+            {
+                case 1:
+                    data_flag.Text = "Green";
+                    data_flag.ForeColor = System.Drawing.Color.Green;
+                    break;
+                case 2:
+                    data_flag.Text = "Blue";
+                    data_flag.ForeColor = System.Drawing.Color.Blue;
+                    break;
+                case 3:
+                    data_flag.Text = "Yellow";
+                    data_flag.ForeColor = System.Drawing.Color.Yellow;
+                    break;
+                case 4:
+                    data_flag.Text = "Red";
+                    data_flag.ForeColor = System.Drawing.Color.Red;
+                    break;
+                default:
+                    data_flag.Text = "";
+                    data_flag.ForeColor = System.Drawing.Color.Gray;
+                    break;
+            }
+            //Session Type
+            switch ((int)latestData.SessionType)
+            {
+                case 1:
+                    data_racetype.Text = "Training";
+                    break;
+                case 2:
+                    data_racetype.Text = "Qualifying";
+                    break;
+                case 3:
+                    data_racetype.Text = "Rennen";
+                    break;
+                default:
+                    data_racetype.Text = "Error";
+                    break;
+            }
+            //Lap
+            data_round.Text = "Runde: " + (int)latestData.Lap + " / " + (int)latestData.Total_Laps;
+            //Race Position
+            data_position.Text = "Position: " + (int)latestData.RacePos;
+            //Front Wing
+            //Rear Wing
+            //Engine & Gear
+            //Fuel, ABS & Traction
+            //Tyres
+            if (latestData.wheel_pressure != null)
+            {
+                data_tyre_rl_psi.Text = "Druck: " + (int)latestData.wheel_pressure[0] + " PSI";
+                data_tyre_rr_psi.Text = "Druck: " + (int)latestData.wheel_pressure[1] + " PSI";
+                data_tyre_fl_psi.Text = "Druck: " + (int)latestData.wheel_pressure[2] + " PSI";
+                data_tyre_fr_psi.Text = "Druck: " + (int)latestData.wheel_pressure[3] + " PSI";
+            };
+            //Brakes // RL, RR, FL, FR
+            if (latestData.brake_temp != null)
+            {
+                data_brake_rl_temp.Text = "Temperatur: " + (int)latestData.brake_temp[0] + " °C";
+                data_brake_rr_temp.Text = "Temperatur: " + (int)latestData.brake_temp[1] + " °C";
+                data_brake_fl_temp.Text = "Temperatur: " + (int)latestData.brake_temp[2] + " °C";
+                data_brake_fr_temp.Text = "Temperatur: " + (int)latestData.brake_temp[3] + " °C";
+            };
         }
 
-        
-            string [,] Circuits = new string[25, 7]
+        // Circuit Background Data
+        string [,] Circuits = new string[25, 7]
+        {
+            /*  Land - Ort - Strecke
+                *  Rundenlänge
+                *  Rundenanzahl
+                *  Reifentypen
+                *  Boxengeschwindigkeit
+                *  Reifenverschleiß
+                *  DRS-Zonen
+                */
             {
-                /*  Land - Ort - Strecke
-                 *  Rundenlänge
-                 *  Rundenanzahl
-                 *  Reifentypen
-                 *  Boxengeschwindigkeit
-                 *  Reifenverschleiß
-                 *  DRS-Zonen
-                 */
-                {
-                    //0
-                    "Australien - Melbourne - Albert Park Circuit",
-                    "5,303 km",
-                    "58 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 1 MP"
-                },
-                {
-                    //1
-                    "Malaysia - Sepang - Sepang International Circuit",
-                    "5,543 km",
-                    "56 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "hoch",
-                    "2x via 2 MP"
-                },
-                {
-                    //2
-                    "China - Shanghai - Shanghai International Circuit",
-                    "5,451 km",
-                    "56 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "hoch",
-                    "2x via 2 MP"
-                },
-                {
-                    //3
-                    "Bahrain - Sachir - Bahrain International Circuit",
-                    "5,412 km",
-                    "57 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 2 MP"
-                },
-                {
-                    //4
-                    "Spanien - Montmelo - Circuit de Barcelona-Catalunya",
-                    "4,655 km",
-                    "66 Runden",
-                    "S, M, H", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x DRS" // CHECKEN
-                },
-                {
-                    //5
-                    "Monaco - Monte Carlo - Circuit de Monaco",
-                    "3,337 km",
-                    "78 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "hoch",
-                    "1x via 1 MP"
-                },
-                {
-                    //6
-                    "Kanada - Montreal - Circuit Gilles-Villeneuve",
-                    "4,361 km",
-                    "70 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "niedrig",
-                    "2x via 1 MP"
-                },
-                {
-                    //7
-                    "Großbritannien - Silverstone - Silverstone Circuit",
-                    "5,891 km",
-                    "52 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 2 MP"
-                },
-                {
-                    //8
-                    "Deutschland - Hockenheim - Hockenheimring Baden-Württemberg",
-                    "4,574 km",
-                    "67 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "1x via 1 MP"
-                },
-                {
-                    //9
-                    "Ungarn - Mogyorod - Hungaroring",
-                    "4,381 km",
-                    "70 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "1x via 1 MP"
-                },
-                {
-                    //10
-                    "Belgien - Spa - Circuit de Spa-Francorchamps",
-                    "7,004 km",
-                    "44 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "niedrig",
-                    "2x via 2 MP"
-                },
-                {
-                    //11
-                    "Italien - Monza - Autodromo Nazionale Monza",
-                    "5,793 km",
-                    "53 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "niedrig",
-                    "2x via 2 MP"
-                },
-                {
-                    //12
-                    "Singapur - Singapur - Marina Bay Street Circuit",
-                    "5,073 km",
-                    "61 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 2 MP"
-                },
-                {
-                    //13
-                    "Japan - Suzuka - Suzuka International Racing Course",
-                    "5,807 km",
-                    "53 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "hoch",
-                    "1x via 1 MP"
-                },
-                {
-                    //14
-                    "Vereinigte Arabische Emirate - Abu Dhabi - Yas Marina Circuit",
-                    "5,554 km",
-                    "55 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "niedrig",
-                    "2x via 2 MP"
-                },
-                {
-                    //15
-                    "USA - Austin - Circuit of The Americas",
-                    "5,516 km",
-                    "56 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 2 MP"
-                },
-                {
-                    //16
-                    "Brasilien - Sao Paulo - Autodromo Jose Carlos Pace",
-                    "4,309 km",
-                    "71 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 2 MP"
-                },
-                {
-                    //17
-                    "Österreich - Spielberg - Red Bull Ring",
-                    "4,326 km",
-                    "71 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "gering",
-                    "2x via 2 MP"
-                },
-                {
-                    //18
-                    "Russland - Sotschi - Sochi Autodrom",
-                    "5,848 km",
-                    "53 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "niedrig",
-                    "2x via 2 MP"
-                },
-                {
-                    //19
-                    "Mexiko - Mexiko-Stadt - Autodromo Hermanos Rodriguez",
-                    "4,304 km",
-                    "66 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 1 MP"
-                },
-                {
-                    //20
-                    "Aserbaidschan - Baku - Baku City Circuit",
-                    "6,003 km",
-                    "51 Runden",
-                    "SS, S, M", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "2x via 1 MP"
-                },
-                {
-                    //21
-                    "Land - Stadt - Strecke",
-                    "0,000 km",
-                    "00 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "0x DRS"
-                },
-                {
-                    //22
-                    "Land - Stadt - Strecke",
-                    "0,000 km",
-                    "00 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "0x DRS"
-                },
-                {
-                    //23
-                    "Land - Stadt - Strecke",
-                    "0,000 km",
-                    "00 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "0x DRS"
-                },
-                {
-                    //24
-                    "Land - Stadt - Strecke",
-                    "0,000 km",
-                    "00 Runden",
-                    "US, SS, S", // CHECKEN
-                    "60 km/h", // CHECKEN
-                    "mittel",
-                    "0x DRS"
-                }
-            };
+                //0
+                "Australien - Melbourne - Albert Park Circuit",
+                "5,303 km",
+                "58 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 1 MP"
+            },
+            {
+                //1
+                "Malaysia - Sepang - Sepang International Circuit",
+                "5,543 km",
+                "56 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "hoch",
+                "2x via 2 MP"
+            },
+            {
+                //2
+                "China - Shanghai - Shanghai International Circuit",
+                "5,451 km",
+                "56 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "hoch",
+                "2x via 2 MP"
+            },
+            {
+                //3
+                "Bahrain - Sachir - Bahrain International Circuit",
+                "5,412 km",
+                "57 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 2 MP"
+            },
+            {
+                //4
+                "Spanien - Montmelo - Circuit de Barcelona-Catalunya",
+                "4,655 km",
+                "66 Runden",
+                "S, M, H", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x DRS" // CHECKEN
+            },
+            {
+                //5
+                "Monaco - Monte Carlo - Circuit de Monaco",
+                "3,337 km",
+                "78 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "hoch",
+                "1x via 1 MP"
+            },
+            {
+                //6
+                "Kanada - Montreal - Circuit Gilles-Villeneuve",
+                "4,361 km",
+                "70 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "niedrig",
+                "2x via 1 MP"
+            },
+            {
+                //7
+                "Großbritannien - Silverstone - Silverstone Circuit",
+                "5,891 km",
+                "52 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 2 MP"
+            },
+            {
+                //8
+                "Deutschland - Hockenheim - Hockenheimring Baden-Württemberg",
+                "4,574 km",
+                "67 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "1x via 1 MP"
+            },
+            {
+                //9
+                "Ungarn - Mogyorod - Hungaroring",
+                "4,381 km",
+                "70 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "1x via 1 MP"
+            },
+            {
+                //10
+                "Belgien - Spa - Circuit de Spa-Francorchamps",
+                "7,004 km",
+                "44 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "niedrig",
+                "2x via 2 MP"
+            },
+            {
+                //11
+                "Italien - Monza - Autodromo Nazionale Monza",
+                "5,793 km",
+                "53 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "niedrig",
+                "2x via 2 MP"
+            },
+            {
+                //12
+                "Singapur - Singapur - Marina Bay Street Circuit",
+                "5,073 km",
+                "61 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 2 MP"
+            },
+            {
+                //13
+                "Japan - Suzuka - Suzuka International Racing Course",
+                "5,807 km",
+                "53 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "hoch",
+                "1x via 1 MP"
+            },
+            {
+                //14
+                "Vereinigte Arabische Emirate - Abu Dhabi - Yas Marina Circuit",
+                "5,554 km",
+                "55 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "niedrig",
+                "2x via 2 MP"
+            },
+            {
+                //15
+                "USA - Austin - Circuit of The Americas",
+                "5,516 km",
+                "56 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 2 MP"
+            },
+            {
+                //16
+                "Brasilien - Sao Paulo - Autodromo Jose Carlos Pace",
+                "4,309 km",
+                "71 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 2 MP"
+            },
+            {
+                //17
+                "Österreich - Spielberg - Red Bull Ring",
+                "4,326 km",
+                "71 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "gering",
+                "2x via 2 MP"
+            },
+            {
+                //18
+                "Russland - Sotschi - Sochi Autodrom",
+                "5,848 km",
+                "53 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "niedrig",
+                "2x via 2 MP"
+            },
+            {
+                //19
+                "Mexiko - Mexiko-Stadt - Autodromo Hermanos Rodriguez",
+                "4,304 km",
+                "66 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 1 MP"
+            },
+            {
+                //20
+                "Aserbaidschan - Baku - Baku City Circuit",
+                "6,003 km",
+                "51 Runden",
+                "SS, S, M", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "2x via 1 MP"
+            },
+            {
+                //21
+                "Land - Stadt - Strecke",
+                "0,000 km",
+                "00 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "0x DRS"
+            },
+            {
+                //22
+                "Land - Stadt - Strecke",
+                "0,000 km",
+                "00 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "0x DRS"
+            },
+            {
+                //23
+                "Land - Stadt - Strecke",
+                "0,000 km",
+                "00 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "0x DRS"
+            },
+            {
+                //24
+                "Land - Stadt - Strecke",
+                "0,000 km",
+                "00 Runden",
+                "US, SS, S", // CHECKEN
+                "60 km/h", // CHECKEN
+                "mittel",
+                "0x DRS"
+            }
+        };
     }
 }

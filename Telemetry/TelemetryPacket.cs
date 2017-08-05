@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -31,18 +32,21 @@ namespace Telemetry
             FDX = info.GetValue<float>("FDX");
             FDY = info.GetValue<float>("FDY");
             FDZ = info.GetValue<float>("FDZ");
-            susp_pos_rl = info.GetValue<float>("susp_pos_rl");
-            susp_pos_rr = info.GetValue<float>("susp_pos_rr");
-            susp_pos_fl = info.GetValue<float>("susp_pos_fl");
-            susp_pos_fr = info.GetValue<float>("susp_pos_fr");
-            susp_vel_rl = info.GetValue<float>("susp_vel_rl");
-            susp_vel_rr = info.GetValue<float>("susp_vel_rr");
-            susp_vel_fl = info.GetValue<float>("susp_vel_fl");
-            susp_vel_fr = info.GetValue<float>("susp_vel_fr");
-            wheelspeed_rl = info.GetValue<float>("wheelspeed_rl");
-            wheelspeed_rr = info.GetValue<float>("wheelspeed_rr");
-            wheelspeed_fl = info.GetValue<float>("wheelspeed_fl");
-            wheelspeed_fr = info.GetValue<float>("wheelspeed_fr");
+            susp_pos = new float[4];
+            susp_pos[0] = info.GetValue<float>("susp_pos_rl");
+            susp_pos[1] = info.GetValue<float>("susp_pos_rr");
+            susp_pos[2] = info.GetValue<float>("susp_pos_fl");
+            susp_pos[3] = info.GetValue<float>("susp_pos_fr");
+            susp_vel = new float[4];
+            susp_vel[0] = info.GetValue<float>("susp_vel_rl");
+            susp_vel[1] = info.GetValue<float>("susp_vel_rr");
+            susp_vel[2] = info.GetValue<float>("susp_vel_fl");
+            susp_vel[3] = info.GetValue<float>("susp_vel_fr");
+            wheel_speed = new float[4];
+            wheel_speed[0] = info.GetValue<float>("wheelspeed_rl");
+            wheel_speed[1] = info.GetValue<float>("wheelspeed_rr");
+            wheel_speed[2] = info.GetValue<float>("wheelspeed_fl");
+            wheel_speed[3] = info.GetValue<float>("wheelspeed_fr");
             Throttle = info.GetValue<float>("Throttle");
             Steer = info.GetValue<float>("Steer");
             Brake = info.GetValue<float>("Brake");
@@ -65,28 +69,16 @@ namespace Telemetry
             Sector = info.GetValue<float>("Sector");
             Sector1_Time = info.GetValue<float>("Sector1_Time");
             Sector2_Time = info.GetValue<float>("Sector2_Time");
-            
-            //brake_temp = new float[4];
-            /*
+            brake_temp = new float[4];
             brake_temp[0] = info.GetValue<float>("brake_temp_rl");
             brake_temp[1] = info.GetValue<float>("brake_temp_rr");
             brake_temp[2] = info.GetValue<float>("brake_temp_fl");
             brake_temp[3] = info.GetValue<float>("brake_temp_fr");
-            */
-            brake_temp_rl = info.GetValue<float>("brake_temp_rl");
-            brake_temp_rr = info.GetValue<float>("brake_temp_rr");
-            brake_temp_fl = info.GetValue<float>("brake_temp_fl");
-            brake_temp_fr = info.GetValue<float>("brake_temp_fr");
-            /*
-            brake_temp[0] = brake_temp_rl;
-            brake_temp[1] = brake_temp_rr;
-            brake_temp[2] = brake_temp_fl;
-            brake_temp[3] = brake_temp_fr;
-            */
-            wheels_pressure_rl = info.GetValue<float>("wheels_pressure_rl");
-            wheels_pressure_rr = info.GetValue<float>("wheels_pressure_rr");
-            wheels_pressure_fl = info.GetValue<float>("wheels_pressure_fl");
-            wheels_pressure_fr = info.GetValue<float>("wheels_pressure_fr");
+            wheel_pressure = new float[4];
+            wheel_pressure[0] = info.GetValue<float>("wheels_pressure_rl");
+            wheel_pressure[1] = info.GetValue<float>("wheels_pressure_rr");
+            wheel_pressure[2] = info.GetValue<float>("wheels_pressure_fl");
+            wheel_pressure[3] = info.GetValue<float>("wheels_pressure_fr");
             Team_ID = info.GetValue<float>("Team_ID");
             Total_Laps = info.GetValue<float>("Total_Laps");
             Track_Size = info.GetValue<float>("Track_Size");
@@ -98,18 +90,54 @@ namespace Telemetry
             DRS_Allowed = info.GetValue<float>("DRS_Allowed");
             TrackNumber = info.GetValue<float>("TrackNumber");
             FIAFlag = info.GetValue<float>("FIAFlag");
-            /*
+            
             Era = info.GetValue<float>("Era");
             Engine_Temp = info.GetValue<float>("Engine_Temp");
             gforce_vert = info.GetValue<float>("gforce_vert");
             ang_vel_x = info.GetValue<float>("ang_vel_x");
             ang_vel_y = info.GetValue<float>("ang_vel_y");
             ang_vel_z = info.GetValue<float>("ang_vel_z");
-            */
+            tyre_temp = new byte[4];
+            tyre_temp[0] = info.GetValue<byte>("tyre_temp_rl");
+            tyre_temp[1] = info.GetValue<byte>("tyre_temp_rr");
+            tyre_temp[2] = info.GetValue<byte>("tyre_temp_fl");
+            tyre_temp[3] = info.GetValue<byte>("tyre_temp_fr");
+            tyre_wear = new byte[4];
+            tyre_wear[0] = info.GetValue<byte>("tyre_wear_rl");
+            tyre_wear[1] = info.GetValue<byte>("tyre_wear_rr");
+            tyre_wear[2] = info.GetValue<byte>("tyre_wear_fl");
+            tyre_wear[3] = info.GetValue<byte>("tyre_wear_fr");
+            tyre_type = info.GetValue<byte>("tyre_type");
+            brake_bias = info.GetValue<byte>("brake_bias");
+            fuel_mix = info.GetValue<byte>("fuel_mix");
+            currentLapInvalid = info.GetValue<byte>("currentLapInvalid");
+            tyre_dmg = new byte[4];
+            tyre_dmg[0] = info.GetValue<byte>("tyre_dmg_rl");
+            tyre_dmg[1] = info.GetValue<byte>("tyre_dmg_rr");
+            tyre_dmg[2] = info.GetValue<byte>("tyre_dmg_fl");
+            tyre_dmg[3] = info.GetValue<byte>("tyre_dmg_fr");
+            frontwing_dmg_left = info.GetValue<byte>("frontwing_dmg_left");
+            frontwing_dmg_right = info.GetValue<byte>("frontwing_dmg_right");
+            rearwing_dmg = info.GetValue<byte>("rearwing_dmg");
+            engine_dmg = info.GetValue<byte>("engine_dmg");
+            gear_dmg = info.GetValue<byte>("gear_dmg");
+            exhaust_dmg = info.GetValue<byte>("exhaust_dmg");
+            pit_limiter = info.GetValue<byte>("pit_limiter");
+            pit_limit_speed = info.GetValue<byte>("pit_limit_speed");
+            //Car Data
+            num_cars = info.GetValue<byte>("num_cars");
+            player_car_index = info.GetValue<byte>("player_car_index");
+            car_data = new CarUDPData[20];
+            for (int i = 0; i < 20; i++)
+            {
+                car_data[i] = info.GetValue<CarUDPData>("car_data_"+i);
+            }
+            
+            
 
             // = info.GetValue<float>("");
         }
-        
+
         // Time Values
         public float Time;
         public float LapTime;
@@ -131,18 +159,12 @@ namespace Telemetry
         public float FDY;
         public float FDZ;
         // Wheels
-        public float susp_pos_rl;
-        public float susp_pos_rr;
-        public float susp_pos_fl;
-        public float susp_pos_fr;
-        public float susp_vel_rl;
-        public float susp_vel_rr;
-        public float susp_vel_fl;
-        public float susp_vel_fr;
-        public float wheelspeed_rl;
-        public float wheelspeed_rr;
-        public float wheelspeed_fl;
-        public float wheelspeed_fr;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public float[] susp_pos;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public float[] susp_vel;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public float[] wheel_speed;
         // User controll
         public float Throttle;
         public float Steer;
@@ -166,17 +188,10 @@ namespace Telemetry
         public float Sector;
         public float Sector1_Time;
         public float Sector2_Time;
-        //public float[] brake_temp;
-        
-        private float brake_temp_rl;
-        private float brake_temp_rr;
-        private float brake_temp_fl;
-        private float brake_temp_fr;
-        
-        public float wheels_pressure_rl;
-        public float wheels_pressure_rr;
-        public float wheels_pressure_fl;
-        public float wheels_pressure_fr;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public float[] brake_temp;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public float[] wheel_pressure;
         public float Team_ID;
         public float Total_Laps;
         public float Track_Size;
@@ -188,29 +203,23 @@ namespace Telemetry
         public float DRS_Allowed;
         public float TrackNumber;
         public float FIAFlag;
-        /*
+        
         public float Era;
         public float Engine_Temp;
         public float gforce_vert;
         public float ang_vel_x;
         public float ang_vel_y;
         public float ang_vel_z;
-        public byte tyre_temp_rl;
-        public byte tyre_temp_rr;
-        public byte tyre_temp_fl;
-        public byte tyre_temp_fr;
-        public byte tyre_wear_rl;
-        public byte tyre_wear_rr;
-        public byte tyre_wear_fl;
-        public byte tyre_wear_fr;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public byte[] tyre_temp;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public byte[] tyre_wear;
         public byte tyre_type;
         public byte brake_bias;
         public byte fuel_mix;
         public byte currentLapInvalid;
-        public byte tyre_dmg_rl;
-        public byte tyre_dmg_rr;
-        public byte tyre_dmg_fl;
-        public byte tyre_dmg_fr;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        public byte[] tyre_dmg;
         public byte frontwing_dmg_left;
         public byte frontwing_dmg_right;
         public byte rearwing_dmg;
@@ -219,22 +228,17 @@ namespace Telemetry
         public byte exhaust_dmg;
         public byte pit_limiter;
         public byte pit_limit_speed;
-        */
+        
         // Car Data
-        //public byte num_cars;
-        //public byte player_car_index;
-
+        public byte num_cars;
+        public byte player_car_index;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
+        public CarUDPData[] car_data;
+        
         public float SpeedInKMH
         {
             get { return Speed * 3.60f; }
         }
-
-        public float[] brake_temp
-        {
-            get { return new float[4] { brake_temp_rl, brake_temp_rr, brake_temp_fl, brake_temp_fr }; }
-        }
-        
-
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
@@ -255,18 +259,18 @@ namespace Telemetry
             info.AddValue("FDX", FDX);
             info.AddValue("FDY", FDY);
             info.AddValue("FDZ", FDZ);
-            info.AddValue("susp_pos_rl", susp_pos_rl);
-            info.AddValue("susp_pos_rr", susp_pos_rr);
-            info.AddValue("susp_pos_fl", susp_pos_fl);
-            info.AddValue("susp_pos_fr", susp_pos_fr);
-            info.AddValue("susp_vel_rl", susp_vel_rl);
-            info.AddValue("susp_vel_rr", susp_vel_rr);
-            info.AddValue("susp_vel_fl", susp_vel_fl);
-            info.AddValue("susp_vel_fr", susp_vel_fr);
-            info.AddValue("wheelspeed_rl", wheelspeed_rl);
-            info.AddValue("wheelspeed_rr", wheelspeed_rr);
-            info.AddValue("wheelspeed_fl", wheelspeed_fl);
-            info.AddValue("wheelspeed_fr", wheelspeed_fr);
+            info.AddValue("susp_pos_rl", susp_pos[0]);
+            info.AddValue("susp_pos_rr", susp_pos[1]);
+            info.AddValue("susp_pos_fl", susp_pos[2]);
+            info.AddValue("susp_pos_fr", susp_pos[3]);
+            info.AddValue("susp_vel_rl", susp_vel[0]);
+            info.AddValue("susp_vel_rr", susp_vel[1]);
+            info.AddValue("susp_vel_fl", susp_vel[2]);
+            info.AddValue("susp_vel_fr", susp_vel[3]);
+            info.AddValue("wheelspeed_rl", wheel_speed[0]);
+            info.AddValue("wheelspeed_rr", wheel_speed[1]);
+            info.AddValue("wheelspeed_fl", wheel_speed[2]);
+            info.AddValue("wheelspeed_fr", wheel_speed[3]);
             info.AddValue("Throttle", Throttle);
             info.AddValue("Steer", Steer);
             info.AddValue("Brake", Brake);
@@ -289,23 +293,14 @@ namespace Telemetry
             info.AddValue("Sector", Sector);
             info.AddValue("Sector1_Time", Sector1_Time);
             info.AddValue("Sector2_Time", Sector2_Time);
-            //brake_temp = new float[4];
-            /*
             info.AddValue("brake_temp_rl", brake_temp[0]);
             info.AddValue("brake_temp_rr", brake_temp[1]);
             info.AddValue("brake_temp_fl", brake_temp[2]);
             info.AddValue("brake_temp_fr", brake_temp[3]);
-            */
-            
-            info.AddValue("brake_temp_rl", brake_temp_rl);
-            info.AddValue("brake_temp_rr", brake_temp_rr);
-            info.AddValue("brake_temp_fl", brake_temp_fl);
-            info.AddValue("brake_temp_fr", brake_temp_fr);
-            
-            info.AddValue("wheels_pressure_rl", wheels_pressure_rl);
-            info.AddValue("wheels_pressure_rr", wheels_pressure_rr);
-            info.AddValue("wheels_pressure_fl", wheels_pressure_fl);
-            info.AddValue("wheels_pressure_fr", wheels_pressure_fr);
+            info.AddValue("wheels_pressure_rl", wheel_pressure[0]);
+            info.AddValue("wheels_pressure_rr", wheel_pressure[1]);
+            info.AddValue("wheels_pressure_fl", wheel_pressure[2]);
+            info.AddValue("wheels_pressure_fr", wheel_pressure[3]);
             info.AddValue("Team_ID", Team_ID);
             info.AddValue("Total_Laps", Total_Laps);
             info.AddValue("Track_Size", Track_Size);
@@ -317,14 +312,44 @@ namespace Telemetry
             info.AddValue("DRS_Allowed", DRS_Allowed);
             info.AddValue("TrackNumber", TrackNumber);
             info.AddValue("FIAFlag", FIAFlag);
-            /*
+            
             info.AddValue("Era", Era);
             info.AddValue("Engine_Temp", Engine_Temp);
             info.AddValue("geforce_vert", gforce_vert);
             info.AddValue("ang_vel_x", ang_vel_x);
             info.AddValue("ang_vel_y", ang_vel_y);
             info.AddValue("ang_vel_z", ang_vel_z);
-            */
+            info.AddValue("tyre_temp_rl", tyre_temp[0]);
+            info.AddValue("tyre_temp_rr", tyre_temp[1]);
+            info.AddValue("tyre_temp_fl", tyre_temp[2]);
+            info.AddValue("tyre_temp_fr", tyre_temp[3]);
+            info.AddValue("tyre_wear_rl", tyre_wear[0]);
+            info.AddValue("tyre_wear_rr", tyre_wear[1]);
+            info.AddValue("tyre_wear_fl", tyre_wear[2]);
+            info.AddValue("tyre_wear_fr", tyre_wear[3]);
+            info.AddValue("tyre_type", tyre_type);
+            info.AddValue("brake_bias", brake_bias);
+            info.AddValue("fuel_mix", fuel_mix);
+            info.AddValue("currentLapInvalid", currentLapInvalid);
+            info.AddValue("tyre_dmg_rl", tyre_dmg[0]);
+            info.AddValue("tyre_dmg_rr", tyre_dmg[1]);
+            info.AddValue("tyre_dmg_fl", tyre_dmg[2]);
+            info.AddValue("tyre_dmg_fr", tyre_dmg[3]);
+            info.AddValue("frontwing_dmg_left", frontwing_dmg_left);
+            info.AddValue("frontwing_dmg_right", frontwing_dmg_right);
+            info.AddValue("rearwing_dmg", rearwing_dmg);
+            info.AddValue("engine_dmg", engine_dmg);
+            info.AddValue("gear_dmg", gear_dmg);
+            info.AddValue("exhaust_dmg", exhaust_dmg);
+            info.AddValue("pit_limiter", pit_limiter);
+            info.AddValue("pit_limit_speed", pit_limit_speed);
+            info.AddValue("num_cars", num_cars);
+            info.AddValue("player_car_index", player_car_index);
+            for (int i = 0; i < 20; i++)
+            {
+                info.AddValue("car_data_"+i, car_data[i]);
+            }
+
             //info.AddValue("", );
         }
     }

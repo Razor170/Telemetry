@@ -250,17 +250,17 @@
             this.data_traction = new System.Windows.Forms.Label();
             this.data_abs = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
+            this.data_round = new System.Windows.Forms.Label();
+            this.data_position = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
+            this.data_racetype = new System.Windows.Forms.Label();
             this.data_flag = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
+            this.data_fuelmode = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
@@ -474,7 +474,7 @@
             this.raceinfo.Location = new System.Drawing.Point(4, 22);
             this.raceinfo.Name = "raceinfo";
             this.raceinfo.Padding = new System.Windows.Forms.Padding(3);
-            this.raceinfo.Size = new System.Drawing.Size(931, 731);
+            this.raceinfo.Size = new System.Drawing.Size(931, 736);
             this.raceinfo.TabIndex = 0;
             this.raceinfo.Text = "Debug";
             this.raceinfo.UseVisualStyleBackColor = true;
@@ -2636,17 +2636,17 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label68);
+            this.groupBox4.Controls.Add(this.data_fuelmode);
             this.groupBox4.Controls.Add(this.label67);
             this.groupBox4.Controls.Add(this.data_flag);
-            this.groupBox4.Controls.Add(this.label66);
+            this.groupBox4.Controls.Add(this.data_racetype);
             this.groupBox4.Controls.Add(this.label65);
             this.groupBox4.Controls.Add(this.label64);
             this.groupBox4.Controls.Add(this.label63);
             this.groupBox4.Controls.Add(this.label62);
             this.groupBox4.Controls.Add(this.label61);
-            this.groupBox4.Controls.Add(this.label60);
-            this.groupBox4.Controls.Add(this.label59);
+            this.groupBox4.Controls.Add(this.data_position);
+            this.groupBox4.Controls.Add(this.data_round);
             this.groupBox4.Location = new System.Drawing.Point(8, 201);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(375, 530);
@@ -2654,23 +2654,23 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Renndaten";
             // 
-            // label59
+            // data_round
             // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(6, 16);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(74, 13);
-            this.label59.TabIndex = 0;
-            this.label59.Text = "Runde: 1 / 58";
+            this.data_round.AutoSize = true;
+            this.data_round.Location = new System.Drawing.Point(6, 16);
+            this.data_round.Name = "data_round";
+            this.data_round.Size = new System.Drawing.Size(74, 13);
+            this.data_round.TabIndex = 0;
+            this.data_round.Text = "Runde: 1 / 58";
             // 
-            // label60
+            // data_position
             // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(120, 16);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(56, 13);
-            this.label60.TabIndex = 1;
-            this.label60.Text = "Position: 1";
+            this.data_position.AutoSize = true;
+            this.data_position.Location = new System.Drawing.Point(120, 16);
+            this.data_position.Name = "data_position";
+            this.data_position.Size = new System.Drawing.Size(56, 13);
+            this.data_position.TabIndex = 1;
+            this.data_position.Text = "Position: 1";
             // 
             // label61
             // 
@@ -2717,15 +2717,15 @@
             this.label65.TabIndex = 6;
             this.label65.Text = "Rundenzeit:";
             // 
-            // label66
+            // data_racetype
             // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(214, 14);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(71, 17);
-            this.label66.TabIndex = 7;
-            this.label66.Text = "Qualifying";
+            this.data_racetype.AutoSize = true;
+            this.data_racetype.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_racetype.Location = new System.Drawing.Point(214, 14);
+            this.data_racetype.Name = "data_racetype";
+            this.data_racetype.Size = new System.Drawing.Size(71, 17);
+            this.data_racetype.TabIndex = 7;
+            this.data_racetype.Text = "Qualifying";
             // 
             // data_flag
             // 
@@ -2747,14 +2747,14 @@
             this.label67.TabIndex = 9;
             this.label67.Text = "Letzte Rundenzeit:";
             // 
-            // label68
+            // data_fuelmode
             // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(6, 58);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(146, 13);
-            this.label68.TabIndex = 10;
-            this.label68.Text = "Treibstoffmodus: Standard (2)";
+            this.data_fuelmode.AutoSize = true;
+            this.data_fuelmode.Location = new System.Drawing.Point(6, 31);
+            this.data_fuelmode.Name = "data_fuelmode";
+            this.data_fuelmode.Size = new System.Drawing.Size(146, 13);
+            this.data_fuelmode.TabIndex = 10;
+            this.data_fuelmode.Text = "Treibstoffmodus: Standard (2)";
             // 
             // groupBox5
             // 
@@ -3321,16 +3321,16 @@
         private System.Windows.Forms.Label data_fw_r;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label data_position;
+        private System.Windows.Forms.Label data_round;
         private System.Windows.Forms.Label data_flag;
-        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label data_racetype;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label data_fuelmode;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label95;
