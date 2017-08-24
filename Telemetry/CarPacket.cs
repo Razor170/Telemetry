@@ -33,6 +33,7 @@ namespace Telemetry
             inPits = info.GetValue<byte>("inPits");
             sector = info.GetValue<byte>("sector");
             currentLapInvalid = info.GetValue<byte>("currentLapInvalid");
+            penalities = info.GetValue<byte>("penalities");
         }
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
         public float[] worldPosition;
@@ -50,6 +51,7 @@ namespace Telemetry
         public byte inPits;
         public byte sector;
         public byte currentLapInvalid;
+        public byte penalities;
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
@@ -70,6 +72,7 @@ namespace Telemetry
             info.AddValue("inPits", inPits);
             info.AddValue("sector", sector);
             info.AddValue("currentLapInvalid", currentLapInvalid);
+            info.AddValue("penalities", penalities);
         }
     }
     

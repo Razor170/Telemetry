@@ -124,6 +124,10 @@ namespace Telemetry
             exhaust_dmg = info.GetValue<byte>("exhaust_dmg");
             pit_limiter = info.GetValue<byte>("pit_limiter");
             pit_limit_speed = info.GetValue<byte>("pit_limit_speed");
+            session_time_left = info.GetValue<float>("session_time_left");
+            rev_lights_percent = info.GetValue<byte>("rev_lights_percent");
+            is_spectating = info.GetValue<byte>("is_spectating");
+            spectator_car_index = info.GetValue<byte>("spectator_car_index");
             //Car Data
             num_cars = info.GetValue<byte>("num_cars");
             player_car_index = info.GetValue<byte>("player_car_index");
@@ -228,6 +232,10 @@ namespace Telemetry
         public byte exhaust_dmg;
         public byte pit_limiter;
         public byte pit_limit_speed;
+        public float session_time_left;
+        public byte rev_lights_percent;
+        public byte is_spectating;
+        public byte spectator_car_index;
         
         // Car Data
         public byte num_cars;
@@ -343,6 +351,12 @@ namespace Telemetry
             info.AddValue("exhaust_dmg", exhaust_dmg);
             info.AddValue("pit_limiter", pit_limiter);
             info.AddValue("pit_limit_speed", pit_limit_speed);
+            info.AddValue("session_time_left", session_time_left);
+            info.AddValue("rev_lights_percent", rev_lights_percent);
+            info.AddValue("is_spectating", is_spectating);
+            info.AddValue("spectator_car_index", spectator_car_index);
+
+            //Car data
             info.AddValue("num_cars", num_cars);
             info.AddValue("player_car_index", player_car_index);
             for (int i = 0; i < 20; i++)

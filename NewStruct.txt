@@ -55,9 +55,6 @@ struct UDPPacket
     float m_drsAllowed;	// 0 = not allowed, 1 = allowed, -1 = invalid / unknown
     float m_track_number;	// -1 for unknown, 0-21 for tracks
     float m_vehicleFIAFlags;	// -1 = invalid/unknown, 0 = none, 1 = green, 2 = blue, 3 = yellow, 4 = red
-
-
-
     float m_era;                    	// era, 2017 (modern) or 1980 (classic)
     float m_engine_temperature;  	// engine temperature (centigrade)
     float m_gforce_vert;	// vertical g-force component
