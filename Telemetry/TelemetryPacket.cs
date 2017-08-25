@@ -10,138 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Telemetry
 {
-    [Serializable]
-    public struct TelemetryPacket : ISerializable
+
+    public struct TelemetryPacket
     {
-        public TelemetryPacket(SerializationInfo info, StreamingContext context)
-        {
-            Time = info.GetValue<float>("Time");
-            LapTime = info.GetValue<float>("LapTime");
-            LapDistance = info.GetValue<float>("LapDistance");
-            TotalDistance = info.GetValue<float>("TotalDistance");
-            X = info.GetValue<float>("X");
-            Y = info.GetValue<float>("Y");
-            Z = info.GetValue<float>("Z");
-            Speed = info.GetValue<float>("Speed");
-            VX = info.GetValue<float>("VX");
-            VY = info.GetValue<float>("VY");
-            VZ = info.GetValue<float>("VZ");
-            RDX = info.GetValue<float>("RDX");
-            RDY = info.GetValue<float>("RDY");
-            RDZ = info.GetValue<float>("RDZ");
-            FDX = info.GetValue<float>("FDX");
-            FDY = info.GetValue<float>("FDY");
-            FDZ = info.GetValue<float>("FDZ");
-            susp_pos = new float[4];
-            susp_pos[0] = info.GetValue<float>("susp_pos_rl");
-            susp_pos[1] = info.GetValue<float>("susp_pos_rr");
-            susp_pos[2] = info.GetValue<float>("susp_pos_fl");
-            susp_pos[3] = info.GetValue<float>("susp_pos_fr");
-            susp_vel = new float[4];
-            susp_vel[0] = info.GetValue<float>("susp_vel_rl");
-            susp_vel[1] = info.GetValue<float>("susp_vel_rr");
-            susp_vel[2] = info.GetValue<float>("susp_vel_fl");
-            susp_vel[3] = info.GetValue<float>("susp_vel_fr");
-            wheel_speed = new float[4];
-            wheel_speed[0] = info.GetValue<float>("wheelspeed_rl");
-            wheel_speed[1] = info.GetValue<float>("wheelspeed_rr");
-            wheel_speed[2] = info.GetValue<float>("wheelspeed_fl");
-            wheel_speed[3] = info.GetValue<float>("wheelspeed_fr");
-            Throttle = info.GetValue<float>("Throttle");
-            Steer = info.GetValue<float>("Steer");
-            Brake = info.GetValue<float>("Brake");
-            Clutch = info.GetValue<float>("Clutch");
-            Gear = info.GetValue<float>("Gear");
-            gforce_lat = info.GetValue<float>("gforce_lat");
-            gforce_lon = info.GetValue<float>("gforce_lon");
-            Lap = info.GetValue<float>("Lap");
-            RPM = info.GetValue<float>("RPM");
-            SLI_Support = info.GetValue<float>("SLI_Support");
-            RacePos = info.GetValue<float>("RacePos");
-            KERS_Level = info.GetValue<float>("KERS_Level");
-            KERS_Max_Level = info.GetValue<float>("KERS_Max_Level");
-            DRS = info.GetValue<float>("DRS");
-            Traction_Control = info.GetValue<float>("Traction_Control");
-            ABS = info.GetValue<float>("ABS");
-            Fuel = info.GetValue<float>("Fuel");
-            Fuel_Capacity = info.GetValue<float>("Fuel_Capacity");
-            In_Pit = info.GetValue<float>("In_Pit");
-            Sector = info.GetValue<float>("Sector");
-            Sector1_Time = info.GetValue<float>("Sector1_Time");
-            Sector2_Time = info.GetValue<float>("Sector2_Time");
-            brake_temp = new float[4];
-            brake_temp[0] = info.GetValue<float>("brake_temp_rl");
-            brake_temp[1] = info.GetValue<float>("brake_temp_rr");
-            brake_temp[2] = info.GetValue<float>("brake_temp_fl");
-            brake_temp[3] = info.GetValue<float>("brake_temp_fr");
-            wheel_pressure = new float[4];
-            wheel_pressure[0] = info.GetValue<float>("wheels_pressure_rl");
-            wheel_pressure[1] = info.GetValue<float>("wheels_pressure_rr");
-            wheel_pressure[2] = info.GetValue<float>("wheels_pressure_fl");
-            wheel_pressure[3] = info.GetValue<float>("wheels_pressure_fr");
-            Team_ID = info.GetValue<float>("Team_ID");
-            Total_Laps = info.GetValue<float>("Total_Laps");
-            Track_Size = info.GetValue<float>("Track_Size");
-            Last_Lap_Time = info.GetValue<float>("Last_Lap_Time");
-            max_RPM = info.GetValue<float>("max_RPM");
-            idle_RPM = info.GetValue<float>("idle_RPM");
-            max_Gears = info.GetValue<float>("max_Gears");
-            SessionType = info.GetValue<float>("SessionType");
-            DRS_Allowed = info.GetValue<float>("DRS_Allowed");
-            TrackNumber = info.GetValue<float>("TrackNumber");
-            FIAFlag = info.GetValue<float>("FIAFlag");
-            
-            Era = info.GetValue<float>("Era");
-            Engine_Temp = info.GetValue<float>("Engine_Temp");
-            gforce_vert = info.GetValue<float>("gforce_vert");
-            ang_vel_x = info.GetValue<float>("ang_vel_x");
-            ang_vel_y = info.GetValue<float>("ang_vel_y");
-            ang_vel_z = info.GetValue<float>("ang_vel_z");
-            tyre_temp = new byte[4];
-            tyre_temp[0] = info.GetValue<byte>("tyre_temp_rl");
-            tyre_temp[1] = info.GetValue<byte>("tyre_temp_rr");
-            tyre_temp[2] = info.GetValue<byte>("tyre_temp_fl");
-            tyre_temp[3] = info.GetValue<byte>("tyre_temp_fr");
-            tyre_wear = new byte[4];
-            tyre_wear[0] = info.GetValue<byte>("tyre_wear_rl");
-            tyre_wear[1] = info.GetValue<byte>("tyre_wear_rr");
-            tyre_wear[2] = info.GetValue<byte>("tyre_wear_fl");
-            tyre_wear[3] = info.GetValue<byte>("tyre_wear_fr");
-            tyre_type = info.GetValue<byte>("tyre_type");
-            brake_bias = info.GetValue<byte>("brake_bias");
-            fuel_mix = info.GetValue<byte>("fuel_mix");
-            currentLapInvalid = info.GetValue<byte>("currentLapInvalid");
-            tyre_dmg = new byte[4];
-            tyre_dmg[0] = info.GetValue<byte>("tyre_dmg_rl");
-            tyre_dmg[1] = info.GetValue<byte>("tyre_dmg_rr");
-            tyre_dmg[2] = info.GetValue<byte>("tyre_dmg_fl");
-            tyre_dmg[3] = info.GetValue<byte>("tyre_dmg_fr");
-            frontwing_dmg_left = info.GetValue<byte>("frontwing_dmg_left");
-            frontwing_dmg_right = info.GetValue<byte>("frontwing_dmg_right");
-            rearwing_dmg = info.GetValue<byte>("rearwing_dmg");
-            engine_dmg = info.GetValue<byte>("engine_dmg");
-            gear_dmg = info.GetValue<byte>("gear_dmg");
-            exhaust_dmg = info.GetValue<byte>("exhaust_dmg");
-            pit_limiter = info.GetValue<byte>("pit_limiter");
-            pit_limit_speed = info.GetValue<byte>("pit_limit_speed");
-            session_time_left = info.GetValue<float>("session_time_left");
-            rev_lights_percent = info.GetValue<byte>("rev_lights_percent");
-            is_spectating = info.GetValue<byte>("is_spectating");
-            spectator_car_index = info.GetValue<byte>("spectator_car_index");
-            //Car Data
-            num_cars = info.GetValue<byte>("num_cars");
-            player_car_index = info.GetValue<byte>("player_car_index");
-            car_data = new CarUDPData[20];
-            for (int i = 0; i < 20; i++)
-            {
-                car_data[i] = info.GetValue<CarUDPData>("car_data_"+i);
-            }
-            
-            
-
-            // = info.GetValue<float>("");
-        }
-
         // Time Values
         public float Time;
         public float LapTime;
@@ -207,7 +78,6 @@ namespace Telemetry
         public float DRS_Allowed;
         public float TrackNumber;
         public float FIAFlag;
-        
         public float Era;
         public float Engine_Temp;
         public float gforce_vert;
@@ -236,136 +106,40 @@ namespace Telemetry
         public byte rev_lights_percent;
         public byte is_spectating;
         public byte spectator_car_index;
-        
         // Car Data
         public byte num_cars;
-        public byte player_car_index;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
-        public CarUDPData[] car_data;
-        
+        public byte player_car_index;//336
+
         public float SpeedInKMH
         {
             get { return Speed * 3.60f; }
         }
-
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        public int racePos
         {
-            info.AddValue("Time", Time);
-            info.AddValue("LapTime", LapTime);
-            info.AddValue("LapDistance", LapDistance);
-            info.AddValue("TotalDistance", TotalDistance);
-            info.AddValue("X", X);
-            info.AddValue("Y", Y);
-            info.AddValue("Z", Z);
-            info.AddValue("Speed", Speed);
-            info.AddValue("VX", VX);
-            info.AddValue("VY", VY);
-            info.AddValue("VZ", VZ);
-            info.AddValue("RDX", RDX);
-            info.AddValue("RDY", RDY);
-            info.AddValue("RDZ", RDZ);
-            info.AddValue("FDX", FDX);
-            info.AddValue("FDY", FDY);
-            info.AddValue("FDZ", FDZ);
-            info.AddValue("susp_pos_rl", susp_pos[0]);
-            info.AddValue("susp_pos_rr", susp_pos[1]);
-            info.AddValue("susp_pos_fl", susp_pos[2]);
-            info.AddValue("susp_pos_fr", susp_pos[3]);
-            info.AddValue("susp_vel_rl", susp_vel[0]);
-            info.AddValue("susp_vel_rr", susp_vel[1]);
-            info.AddValue("susp_vel_fl", susp_vel[2]);
-            info.AddValue("susp_vel_fr", susp_vel[3]);
-            info.AddValue("wheelspeed_rl", wheel_speed[0]);
-            info.AddValue("wheelspeed_rr", wheel_speed[1]);
-            info.AddValue("wheelspeed_fl", wheel_speed[2]);
-            info.AddValue("wheelspeed_fr", wheel_speed[3]);
-            info.AddValue("Throttle", Throttle);
-            info.AddValue("Steer", Steer);
-            info.AddValue("Brake", Brake);
-            info.AddValue("Clutch", Clutch);
-            info.AddValue("Gear", Gear);
-            info.AddValue("gforce_lat", gforce_lat);
-            info.AddValue("gforce_lon", gforce_lon);
-            info.AddValue("Lap", Lap);
-            info.AddValue("RPM", RPM);
-            info.AddValue("SLI_Support", SLI_Support);
-            info.AddValue("RacePos", RacePos);
-            info.AddValue("KERS_Level", KERS_Level);
-            info.AddValue("KERS_Max_Level", KERS_Max_Level);
-            info.AddValue("DRS", DRS);
-            info.AddValue("Traction_Control", Traction_Control);
-            info.AddValue("ABS", ABS);
-            info.AddValue("Fuel", Fuel);
-            info.AddValue("Fuel_Capacity", Fuel_Capacity);
-            info.AddValue("In_Pit", In_Pit);
-            info.AddValue("Sector", Sector);
-            info.AddValue("Sector1_Time", Sector1_Time);
-            info.AddValue("Sector2_Time", Sector2_Time);
-            info.AddValue("brake_temp_rl", brake_temp[0]);
-            info.AddValue("brake_temp_rr", brake_temp[1]);
-            info.AddValue("brake_temp_fl", brake_temp[2]);
-            info.AddValue("brake_temp_fr", brake_temp[3]);
-            info.AddValue("wheels_pressure_rl", wheel_pressure[0]);
-            info.AddValue("wheels_pressure_rr", wheel_pressure[1]);
-            info.AddValue("wheels_pressure_fl", wheel_pressure[2]);
-            info.AddValue("wheels_pressure_fr", wheel_pressure[3]);
-            info.AddValue("Team_ID", Team_ID);
-            info.AddValue("Total_Laps", Total_Laps);
-            info.AddValue("Track_Size", Track_Size);
-            info.AddValue("Last_Lap_Time", Last_Lap_Time);
-            info.AddValue("max_RPM", max_RPM);
-            info.AddValue("idle_RPM", idle_RPM);
-            info.AddValue("max_Gears", max_Gears);
-            info.AddValue("SessionType", SessionType);
-            info.AddValue("DRS_Allowed", DRS_Allowed);
-            info.AddValue("TrackNumber", TrackNumber);
-            info.AddValue("FIAFlag", FIAFlag);
-            
-            info.AddValue("Era", Era);
-            info.AddValue("Engine_Temp", Engine_Temp);
-            info.AddValue("geforce_vert", gforce_vert);
-            info.AddValue("ang_vel_x", ang_vel_x);
-            info.AddValue("ang_vel_y", ang_vel_y);
-            info.AddValue("ang_vel_z", ang_vel_z);
-            info.AddValue("tyre_temp_rl", tyre_temp[0]);
-            info.AddValue("tyre_temp_rr", tyre_temp[1]);
-            info.AddValue("tyre_temp_fl", tyre_temp[2]);
-            info.AddValue("tyre_temp_fr", tyre_temp[3]);
-            info.AddValue("tyre_wear_rl", tyre_wear[0]);
-            info.AddValue("tyre_wear_rr", tyre_wear[1]);
-            info.AddValue("tyre_wear_fl", tyre_wear[2]);
-            info.AddValue("tyre_wear_fr", tyre_wear[3]);
-            info.AddValue("tyre_type", tyre_type);
-            info.AddValue("brake_bias", brake_bias);
-            info.AddValue("fuel_mix", fuel_mix);
-            info.AddValue("currentLapInvalid", currentLapInvalid);
-            info.AddValue("tyre_dmg_rl", tyre_dmg[0]);
-            info.AddValue("tyre_dmg_rr", tyre_dmg[1]);
-            info.AddValue("tyre_dmg_fl", tyre_dmg[2]);
-            info.AddValue("tyre_dmg_fr", tyre_dmg[3]);
-            info.AddValue("frontwing_dmg_left", frontwing_dmg_left);
-            info.AddValue("frontwing_dmg_right", frontwing_dmg_right);
-            info.AddValue("rearwing_dmg", rearwing_dmg);
-            info.AddValue("engine_dmg", engine_dmg);
-            info.AddValue("gear_dmg", gear_dmg);
-            info.AddValue("exhaust_dmg", exhaust_dmg);
-            info.AddValue("pit_limiter", pit_limiter);
-            info.AddValue("pit_limit_speed", pit_limit_speed);
-            info.AddValue("session_time_left", session_time_left);
-            info.AddValue("rev_lights_percent", rev_lights_percent);
-            info.AddValue("is_spectating", is_spectating);
-            info.AddValue("spectator_car_index", spectator_car_index);
-
-            //Car data
-            info.AddValue("num_cars", num_cars);
-            info.AddValue("player_car_index", player_car_index);
-            for (int i = 0; i < 20; i++)
-            {
-                info.AddValue("car_data_"+i, car_data[i]);
-            }
-
-            //info.AddValue("", );
+            get { return ((int)RacePos + 1); }
         }
+    }
+
+    public struct CarUDPData
+    {
+        public float worldPosition_x;
+        public float worldPosition_y;
+        public float worldPosition_z;
+        public float lastLapTime;
+        public float currentLapTime;
+        public float bestLapTime;
+        public float sector1Time;
+        public float sector2Time;
+        public float lapDistance;
+        public byte driverId;
+        public byte teamId;
+        public byte trackPosition;
+        public byte currentLapNum;
+        public byte tyreCompound;
+        public byte inPits;
+        public byte sector;
+        public byte currentLapInvalid;
+        public byte penalities;
     }
 
     //
@@ -382,6 +156,17 @@ namespace Telemetry
             var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
             var stuff = (TelemetryPacket)Marshal.PtrToStructure(
                 handle.AddrOfPinnedObject(), typeof(TelemetryPacket));
+            handle.Free();
+            return stuff;
+        }
+
+        public static CarUDPData ConvertToCarPacket(byte[] bytes)
+        {
+            // Marshal the byte array into the telemetryPacket structure
+            var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            
+            var stuff = (CarUDPData)Marshal.PtrToStructure(
+                handle.AddrOfPinnedObject(), typeof(CarUDPData));
             handle.Free();
             return stuff;
         }

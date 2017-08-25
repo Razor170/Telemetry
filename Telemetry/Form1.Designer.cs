@@ -34,6 +34,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.race_sector3 = new System.Windows.Forms.Label();
+            this.race_sector2 = new System.Windows.Forms.Label();
+            this.race_sector1 = new System.Windows.Forms.Label();
+            this.race_roundtime = new System.Windows.Forms.Label();
+            this.race_lr = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.data_flag = new System.Windows.Forms.Label();
             this.data_racetype = new System.Windows.Forms.Label();
@@ -45,7 +50,7 @@
             this.data_round = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.data_fuelmode = new System.Windows.Forms.Label();
-            this.label153 = new System.Windows.Forms.Label();
+            this.data_pit = new System.Windows.Forms.Label();
             this.data_drs = new System.Windows.Forms.Label();
             this.BrakeBar = new System.Windows.Forms.Label();
             this.ThrottleBar = new System.Windows.Forms.Label();
@@ -261,7 +266,50 @@
             this.raceinfo_text_laptime = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
             this.raceinfo_text_time = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.raceoverview = new System.Windows.Forms.GroupBox();
+            this.race_19_pen = new System.Windows.Forms.Label();
+            this.race_18_pen = new System.Windows.Forms.Label();
+            this.race_17_pen = new System.Windows.Forms.Label();
+            this.race_16_pen = new System.Windows.Forms.Label();
+            this.race_15_pen = new System.Windows.Forms.Label();
+            this.race_14_pen = new System.Windows.Forms.Label();
+            this.race_13_pen = new System.Windows.Forms.Label();
+            this.race_12_pen = new System.Windows.Forms.Label();
+            this.race_11_pen = new System.Windows.Forms.Label();
+            this.race_10_pen = new System.Windows.Forms.Label();
+            this.race_9_pen = new System.Windows.Forms.Label();
+            this.race_8_pen = new System.Windows.Forms.Label();
+            this.race_7_pen = new System.Windows.Forms.Label();
+            this.race_6_pen = new System.Windows.Forms.Label();
+            this.race_5_pen = new System.Windows.Forms.Label();
+            this.race_4_pen = new System.Windows.Forms.Label();
+            this.race_3_pen = new System.Windows.Forms.Label();
+            this.race_2_pen = new System.Windows.Forms.Label();
+            this.race_1_pen = new System.Windows.Forms.Label();
+            this.race_0_pen = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.race_19_deltaL = new System.Windows.Forms.Label();
+            this.race_18_deltaL = new System.Windows.Forms.Label();
+            this.race_17_deltaL = new System.Windows.Forms.Label();
+            this.race_16_deltaL = new System.Windows.Forms.Label();
+            this.race_15_deltaL = new System.Windows.Forms.Label();
+            this.race_14_deltaL = new System.Windows.Forms.Label();
+            this.race_13_deltaL = new System.Windows.Forms.Label();
+            this.race_12_deltaL = new System.Windows.Forms.Label();
+            this.race_11_deltaL = new System.Windows.Forms.Label();
+            this.race_10_deltaL = new System.Windows.Forms.Label();
+            this.race_9_deltaL = new System.Windows.Forms.Label();
+            this.race_8_deltaL = new System.Windows.Forms.Label();
+            this.race_7_deltaL = new System.Windows.Forms.Label();
+            this.race_6_deltaL = new System.Windows.Forms.Label();
+            this.race_5_deltaL = new System.Windows.Forms.Label();
+            this.race_4_deltaL = new System.Windows.Forms.Label();
+            this.race_3_deltaL = new System.Windows.Forms.Label();
+            this.race_2_deltaL = new System.Windows.Forms.Label();
+            this.race_1_deltaL = new System.Windows.Forms.Label();
+            this.race_0_deltaL = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.race_19_delta = new System.Windows.Forms.Label();
             this.race_18_delta = new System.Windows.Forms.Label();
             this.race_17_delta = new System.Windows.Forms.Label();
@@ -413,6 +461,9 @@
             this.input_port = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGrid_rounds = new System.Windows.Forms.DataGridView();
+            this.Round = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoundTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -421,7 +472,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.raceinfo.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.raceoverview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_rounds)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -432,6 +485,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.raceinfo);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -454,6 +508,11 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.race_sector3);
+            this.groupBox4.Controls.Add(this.race_sector2);
+            this.groupBox4.Controls.Add(this.race_sector1);
+            this.groupBox4.Controls.Add(this.race_roundtime);
+            this.groupBox4.Controls.Add(this.race_lr);
             this.groupBox4.Controls.Add(this.label67);
             this.groupBox4.Controls.Add(this.data_flag);
             this.groupBox4.Controls.Add(this.data_racetype);
@@ -469,6 +528,51 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Renndaten";
+            // 
+            // race_sector3
+            // 
+            this.race_sector3.AutoSize = true;
+            this.race_sector3.Location = new System.Drawing.Point(117, 105);
+            this.race_sector3.Name = "race_sector3";
+            this.race_sector3.Size = new System.Drawing.Size(41, 13);
+            this.race_sector3.TabIndex = 14;
+            this.race_sector3.Text = "label14";
+            // 
+            // race_sector2
+            // 
+            this.race_sector2.AutoSize = true;
+            this.race_sector2.Location = new System.Drawing.Point(117, 92);
+            this.race_sector2.Name = "race_sector2";
+            this.race_sector2.Size = new System.Drawing.Size(41, 13);
+            this.race_sector2.TabIndex = 13;
+            this.race_sector2.Text = "label13";
+            // 
+            // race_sector1
+            // 
+            this.race_sector1.AutoSize = true;
+            this.race_sector1.Location = new System.Drawing.Point(117, 79);
+            this.race_sector1.Name = "race_sector1";
+            this.race_sector1.Size = new System.Drawing.Size(41, 13);
+            this.race_sector1.TabIndex = 12;
+            this.race_sector1.Text = "label11";
+            // 
+            // race_roundtime
+            // 
+            this.race_roundtime.AutoSize = true;
+            this.race_roundtime.Location = new System.Drawing.Point(117, 62);
+            this.race_roundtime.Name = "race_roundtime";
+            this.race_roundtime.Size = new System.Drawing.Size(35, 13);
+            this.race_roundtime.TabIndex = 11;
+            this.race_roundtime.Text = "label9";
+            // 
+            // race_lr
+            // 
+            this.race_lr.AutoSize = true;
+            this.race_lr.Location = new System.Drawing.Point(117, 49);
+            this.race_lr.Name = "race_lr";
+            this.race_lr.Size = new System.Drawing.Size(35, 13);
+            this.race_lr.TabIndex = 10;
+            this.race_lr.Text = "label8";
             // 
             // label67
             // 
@@ -557,7 +661,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.data_fuelmode);
-            this.groupBox3.Controls.Add(this.label153);
+            this.groupBox3.Controls.Add(this.data_pit);
             this.groupBox3.Controls.Add(this.data_drs);
             this.groupBox3.Controls.Add(this.BrakeBar);
             this.groupBox3.Controls.Add(this.ThrottleBar);
@@ -583,16 +687,16 @@
             this.data_fuelmode.TabIndex = 10;
             this.data_fuelmode.Text = "Standard (2)";
             // 
-            // label153
+            // data_pit
             // 
-            this.label153.AutoSize = true;
-            this.label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label153.ForeColor = System.Drawing.Color.Gray;
-            this.label153.Location = new System.Drawing.Point(206, 14);
-            this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(48, 26);
-            this.label153.TabIndex = 6;
-            this.label153.Text = "PIT";
+            this.data_pit.AutoSize = true;
+            this.data_pit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_pit.ForeColor = System.Drawing.Color.Gray;
+            this.data_pit.Location = new System.Drawing.Point(206, 14);
+            this.data_pit.Name = "data_pit";
+            this.data_pit.Size = new System.Drawing.Size(48, 26);
+            this.data_pit.TabIndex = 6;
+            this.data_pit.Text = "PIT";
             // 
             // data_drs
             // 
@@ -759,11 +863,11 @@
             // 
             // data_brake_rr_bias
             // 
-            this.data_brake_rr_bias.Location = new System.Drawing.Point(412, 661);
+            this.data_brake_rr_bias.Location = new System.Drawing.Point(404, 661);
             this.data_brake_rr_bias.Name = "data_brake_rr_bias";
-            this.data_brake_rr_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_rr_bias.Size = new System.Drawing.Size(109, 13);
             this.data_brake_rr_bias.TabIndex = 44;
-            this.data_brake_rr_bias.Text = "Kraftverteilung: 50%";
+            this.data_brake_rr_bias.Text = "Kraftverteilung: 50 %";
             this.data_brake_rr_bias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_brake_rl_bias
@@ -771,17 +875,17 @@
             this.data_brake_rl_bias.AutoSize = true;
             this.data_brake_rl_bias.Location = new System.Drawing.Point(6, 661);
             this.data_brake_rl_bias.Name = "data_brake_rl_bias";
-            this.data_brake_rl_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_rl_bias.Size = new System.Drawing.Size(104, 13);
             this.data_brake_rl_bias.TabIndex = 43;
-            this.data_brake_rl_bias.Text = "Kraftverteilung: 50%";
+            this.data_brake_rl_bias.Text = "Kraftverteilung: 50 %";
             // 
             // data_brake_fr_bias
             // 
-            this.data_brake_fr_bias.Location = new System.Drawing.Point(412, 198);
+            this.data_brake_fr_bias.Location = new System.Drawing.Point(407, 198);
             this.data_brake_fr_bias.Name = "data_brake_fr_bias";
-            this.data_brake_fr_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_fr_bias.Size = new System.Drawing.Size(106, 13);
             this.data_brake_fr_bias.TabIndex = 42;
-            this.data_brake_fr_bias.Text = "Kraftverteilung: 50%";
+            this.data_brake_fr_bias.Text = "Kraftverteilung: 50 %";
             this.data_brake_fr_bias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_brake_fl_bias
@@ -789,17 +893,17 @@
             this.data_brake_fl_bias.AutoSize = true;
             this.data_brake_fl_bias.Location = new System.Drawing.Point(6, 198);
             this.data_brake_fl_bias.Name = "data_brake_fl_bias";
-            this.data_brake_fl_bias.Size = new System.Drawing.Size(101, 13);
+            this.data_brake_fl_bias.Size = new System.Drawing.Size(104, 13);
             this.data_brake_fl_bias.TabIndex = 41;
-            this.data_brake_fl_bias.Text = "Kraftverteilung: 50%";
+            this.data_brake_fl_bias.Text = "Kraftverteilung: 50 %";
             // 
             // data_brake_rr_temp
             // 
-            this.data_brake_rr_temp.Location = new System.Drawing.Point(420, 648);
+            this.data_brake_rr_temp.Location = new System.Drawing.Point(388, 648);
             this.data_brake_rr_temp.Name = "data_brake_rr_temp";
-            this.data_brake_rr_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_rr_temp.Size = new System.Drawing.Size(125, 13);
             this.data_brake_rr_temp.TabIndex = 40;
-            this.data_brake_rr_temp.Text = "Temperatur: 80 °C";
+            this.data_brake_rr_temp.Text = "Temperatur: 1080 °C";
             this.data_brake_rr_temp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_brake_rl_temp
@@ -807,17 +911,17 @@
             this.data_brake_rl_temp.AutoSize = true;
             this.data_brake_rl_temp.Location = new System.Drawing.Point(6, 648);
             this.data_brake_rl_temp.Name = "data_brake_rl_temp";
-            this.data_brake_rl_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_rl_temp.Size = new System.Drawing.Size(105, 13);
             this.data_brake_rl_temp.TabIndex = 39;
-            this.data_brake_rl_temp.Text = "Temperatur: 80 °C";
+            this.data_brake_rl_temp.Text = "Temperatur: 1080 °C";
             // 
             // data_brake_fr_temp
             // 
-            this.data_brake_fr_temp.Location = new System.Drawing.Point(420, 185);
+            this.data_brake_fr_temp.Location = new System.Drawing.Point(388, 185);
             this.data_brake_fr_temp.Name = "data_brake_fr_temp";
-            this.data_brake_fr_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_fr_temp.Size = new System.Drawing.Size(125, 13);
             this.data_brake_fr_temp.TabIndex = 38;
-            this.data_brake_fr_temp.Text = "Temperatur: 80 °C";
+            this.data_brake_fr_temp.Text = "Temperatur: 1080 °C";
             this.data_brake_fr_temp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_brake_fl_temp
@@ -825,9 +929,9 @@
             this.data_brake_fl_temp.AutoSize = true;
             this.data_brake_fl_temp.Location = new System.Drawing.Point(6, 185);
             this.data_brake_fl_temp.Name = "data_brake_fl_temp";
-            this.data_brake_fl_temp.Size = new System.Drawing.Size(93, 13);
+            this.data_brake_fl_temp.Size = new System.Drawing.Size(105, 13);
             this.data_brake_fl_temp.TabIndex = 37;
-            this.data_brake_fl_temp.Text = "Temperatur: 80 °C";
+            this.data_brake_fl_temp.Text = "Temperatur: 1080 °C";
             // 
             // label47
             // 
@@ -1006,7 +1110,7 @@
             this.data_tyre_fr_wear.Name = "data_tyre_fr_wear";
             this.data_tyre_fr_wear.Size = new System.Drawing.Size(93, 13);
             this.data_tyre_fr_wear.TabIndex = 19;
-            this.data_tyre_fr_wear.Text = "Verbrauch: 0%";
+            this.data_tyre_fr_wear.Text = "Verbrauch: 100 %";
             this.data_tyre_fr_wear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_tyre_rl_wear
@@ -1014,9 +1118,9 @@
             this.data_tyre_rl_wear.AutoSize = true;
             this.data_tyre_rl_wear.Location = new System.Drawing.Point(6, 592);
             this.data_tyre_rl_wear.Name = "data_tyre_rl_wear";
-            this.data_tyre_rl_wear.Size = new System.Drawing.Size(76, 13);
+            this.data_tyre_rl_wear.Size = new System.Drawing.Size(91, 13);
             this.data_tyre_rl_wear.TabIndex = 18;
-            this.data_tyre_rl_wear.Text = "Verbrauch: 0%";
+            this.data_tyre_rl_wear.Text = "Verbrauch: 100 %";
             // 
             // data_tyre_rr_wear
             // 
@@ -1024,7 +1128,7 @@
             this.data_tyre_rr_wear.Name = "data_tyre_rr_wear";
             this.data_tyre_rr_wear.Size = new System.Drawing.Size(93, 13);
             this.data_tyre_rr_wear.TabIndex = 17;
-            this.data_tyre_rr_wear.Text = "Verbrauch: 0%";
+            this.data_tyre_rr_wear.Text = "Verbrauch: 100 %";
             this.data_tyre_rr_wear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_tyre_fl_wear
@@ -1032,9 +1136,9 @@
             this.data_tyre_fl_wear.AutoSize = true;
             this.data_tyre_fl_wear.Location = new System.Drawing.Point(6, 130);
             this.data_tyre_fl_wear.Name = "data_tyre_fl_wear";
-            this.data_tyre_fl_wear.Size = new System.Drawing.Size(76, 13);
+            this.data_tyre_fl_wear.Size = new System.Drawing.Size(91, 13);
             this.data_tyre_fl_wear.TabIndex = 16;
-            this.data_tyre_fl_wear.Text = "Verbrauch: 0%";
+            this.data_tyre_fl_wear.Text = "Verbrauch: 100 %";
             // 
             // data_tyre_fr_dmg
             // 
@@ -1042,7 +1146,7 @@
             this.data_tyre_fr_dmg.Name = "data_tyre_fr_dmg";
             this.data_tyre_fr_dmg.Size = new System.Drawing.Size(93, 13);
             this.data_tyre_fr_dmg.TabIndex = 15;
-            this.data_tyre_fr_dmg.Text = "Schaden: 0%";
+            this.data_tyre_fr_dmg.Text = "Schaden: 100 %";
             this.data_tyre_fr_dmg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_tyre_rl_dmg
@@ -1050,9 +1154,9 @@
             this.data_tyre_rl_dmg.AutoSize = true;
             this.data_tyre_rl_dmg.Location = new System.Drawing.Point(6, 605);
             this.data_tyre_rl_dmg.Name = "data_tyre_rl_dmg";
-            this.data_tyre_rl_dmg.Size = new System.Drawing.Size(70, 13);
+            this.data_tyre_rl_dmg.Size = new System.Drawing.Size(85, 13);
             this.data_tyre_rl_dmg.TabIndex = 14;
-            this.data_tyre_rl_dmg.Text = "Schaden: 0%";
+            this.data_tyre_rl_dmg.Text = "Schaden: 100 %";
             // 
             // data_tyre_rr_dmg
             // 
@@ -1060,7 +1164,7 @@
             this.data_tyre_rr_dmg.Name = "data_tyre_rr_dmg";
             this.data_tyre_rr_dmg.Size = new System.Drawing.Size(93, 13);
             this.data_tyre_rr_dmg.TabIndex = 13;
-            this.data_tyre_rr_dmg.Text = "Schaden: 0%";
+            this.data_tyre_rr_dmg.Text = "Schaden: 100 %";
             this.data_tyre_rr_dmg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // data_tyre_fl_dmg
@@ -1068,9 +1172,9 @@
             this.data_tyre_fl_dmg.AutoSize = true;
             this.data_tyre_fl_dmg.Location = new System.Drawing.Point(6, 142);
             this.data_tyre_fl_dmg.Name = "data_tyre_fl_dmg";
-            this.data_tyre_fl_dmg.Size = new System.Drawing.Size(70, 13);
+            this.data_tyre_fl_dmg.Size = new System.Drawing.Size(85, 13);
             this.data_tyre_fl_dmg.TabIndex = 12;
-            this.data_tyre_fl_dmg.Text = "Schaden: 0%";
+            this.data_tyre_fl_dmg.Text = "Schaden: 100 %";
             // 
             // data_tyre_rr_type
             // 
@@ -1113,9 +1217,9 @@
             this.data_rw.AutoSize = true;
             this.data_rw.Location = new System.Drawing.Point(444, 699);
             this.data_rw.Name = "data_rw";
-            this.data_rw.Size = new System.Drawing.Size(69, 13);
+            this.data_rw.Size = new System.Drawing.Size(72, 13);
             this.data_rw.TabIndex = 7;
-            this.data_rw.Text = "Status: 100%";
+            this.data_rw.Text = "Status: 100 %";
             // 
             // data_engine_temp
             // 
@@ -1131,45 +1235,45 @@
             this.data_exhaust.AutoSize = true;
             this.data_exhaust.Location = new System.Drawing.Point(414, 369);
             this.data_exhaust.Name = "data_exhaust";
-            this.data_exhaust.Size = new System.Drawing.Size(99, 13);
+            this.data_exhaust.Size = new System.Drawing.Size(102, 13);
             this.data_exhaust.TabIndex = 5;
-            this.data_exhaust.Text = "Erschöpfung: 100%";
+            this.data_exhaust.Text = "Erschöpfung: 100 %";
             // 
             // data_gear_dmg
             // 
             this.data_gear_dmg.AutoSize = true;
             this.data_gear_dmg.Location = new System.Drawing.Point(434, 356);
             this.data_gear_dmg.Name = "data_gear_dmg";
-            this.data_gear_dmg.Size = new System.Drawing.Size(79, 13);
+            this.data_gear_dmg.Size = new System.Drawing.Size(82, 13);
             this.data_gear_dmg.TabIndex = 4;
-            this.data_gear_dmg.Text = "Getriebe: 100%";
+            this.data_gear_dmg.Text = "Getriebe: 100 %";
             // 
             // data_engine_dmg
             // 
             this.data_engine_dmg.AutoSize = true;
             this.data_engine_dmg.Location = new System.Drawing.Point(447, 343);
             this.data_engine_dmg.Name = "data_engine_dmg";
-            this.data_engine_dmg.Size = new System.Drawing.Size(66, 13);
+            this.data_engine_dmg.Size = new System.Drawing.Size(69, 13);
             this.data_engine_dmg.TabIndex = 3;
-            this.data_engine_dmg.Text = "Motor: 100%";
+            this.data_engine_dmg.Text = "Motor: 100 %";
             // 
             // data_fw_l
             // 
             this.data_fw_l.AutoSize = true;
             this.data_fw_l.Location = new System.Drawing.Point(6, 39);
             this.data_fw_l.Name = "data_fw_l";
-            this.data_fw_l.Size = new System.Drawing.Size(69, 13);
+            this.data_fw_l.Size = new System.Drawing.Size(72, 13);
             this.data_fw_l.TabIndex = 2;
-            this.data_fw_l.Text = "Status: 100%";
+            this.data_fw_l.Text = "Status: 100 %";
             // 
             // data_fw_r
             // 
             this.data_fw_r.AutoSize = true;
             this.data_fw_r.Location = new System.Drawing.Point(444, 39);
             this.data_fw_r.Name = "data_fw_r";
-            this.data_fw_r.Size = new System.Drawing.Size(69, 13);
+            this.data_fw_r.Size = new System.Drawing.Size(72, 13);
             this.data_fw_r.TabIndex = 1;
-            this.data_fw_r.Text = "Status: 100%";
+            this.data_fw_r.Text = "Status: 100 %";
             // 
             // pictureBox1
             // 
@@ -2880,8 +2984,61 @@
             this.raceinfo_text_time.TabIndex = 0;
             this.raceinfo_text_time.Text = "Time";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGrid_rounds);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(931, 736);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // raceoverview
             // 
+            this.raceoverview.Controls.Add(this.race_19_pen);
+            this.raceoverview.Controls.Add(this.race_18_pen);
+            this.raceoverview.Controls.Add(this.race_17_pen);
+            this.raceoverview.Controls.Add(this.race_16_pen);
+            this.raceoverview.Controls.Add(this.race_15_pen);
+            this.raceoverview.Controls.Add(this.race_14_pen);
+            this.raceoverview.Controls.Add(this.race_13_pen);
+            this.raceoverview.Controls.Add(this.race_12_pen);
+            this.raceoverview.Controls.Add(this.race_11_pen);
+            this.raceoverview.Controls.Add(this.race_10_pen);
+            this.raceoverview.Controls.Add(this.race_9_pen);
+            this.raceoverview.Controls.Add(this.race_8_pen);
+            this.raceoverview.Controls.Add(this.race_7_pen);
+            this.raceoverview.Controls.Add(this.race_6_pen);
+            this.raceoverview.Controls.Add(this.race_5_pen);
+            this.raceoverview.Controls.Add(this.race_4_pen);
+            this.raceoverview.Controls.Add(this.race_3_pen);
+            this.raceoverview.Controls.Add(this.race_2_pen);
+            this.raceoverview.Controls.Add(this.race_1_pen);
+            this.raceoverview.Controls.Add(this.race_0_pen);
+            this.raceoverview.Controls.Add(this.label31);
+            this.raceoverview.Controls.Add(this.race_19_deltaL);
+            this.raceoverview.Controls.Add(this.race_18_deltaL);
+            this.raceoverview.Controls.Add(this.race_17_deltaL);
+            this.raceoverview.Controls.Add(this.race_16_deltaL);
+            this.raceoverview.Controls.Add(this.race_15_deltaL);
+            this.raceoverview.Controls.Add(this.race_14_deltaL);
+            this.raceoverview.Controls.Add(this.race_13_deltaL);
+            this.raceoverview.Controls.Add(this.race_12_deltaL);
+            this.raceoverview.Controls.Add(this.race_11_deltaL);
+            this.raceoverview.Controls.Add(this.race_10_deltaL);
+            this.raceoverview.Controls.Add(this.race_9_deltaL);
+            this.raceoverview.Controls.Add(this.race_8_deltaL);
+            this.raceoverview.Controls.Add(this.race_7_deltaL);
+            this.raceoverview.Controls.Add(this.race_6_deltaL);
+            this.raceoverview.Controls.Add(this.race_5_deltaL);
+            this.raceoverview.Controls.Add(this.race_4_deltaL);
+            this.raceoverview.Controls.Add(this.race_3_deltaL);
+            this.raceoverview.Controls.Add(this.race_2_deltaL);
+            this.raceoverview.Controls.Add(this.race_1_deltaL);
+            this.raceoverview.Controls.Add(this.race_0_deltaL);
+            this.raceoverview.Controls.Add(this.label30);
             this.raceoverview.Controls.Add(this.race_19_delta);
             this.raceoverview.Controls.Add(this.race_18_delta);
             this.raceoverview.Controls.Add(this.race_17_delta);
@@ -3031,10 +3188,388 @@
             this.raceoverview.Controls.Add(this.label69);
             this.raceoverview.Location = new System.Drawing.Point(945, 22);
             this.raceoverview.Name = "raceoverview";
-            this.raceoverview.Size = new System.Drawing.Size(424, 398);
+            this.raceoverview.Size = new System.Drawing.Size(529, 398);
             this.raceoverview.TabIndex = 11;
             this.raceoverview.TabStop = false;
             this.raceoverview.Text = "Rennübersicht";
+            // 
+            // race_19_pen
+            // 
+            this.race_19_pen.AutoSize = true;
+            this.race_19_pen.Location = new System.Drawing.Point(380, 376);
+            this.race_19_pen.Name = "race_19_pen";
+            this.race_19_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_19_pen.TabIndex = 189;
+            this.race_19_pen.Text = "+ 3";
+            // 
+            // race_18_pen
+            // 
+            this.race_18_pen.AutoSize = true;
+            this.race_18_pen.Location = new System.Drawing.Point(380, 358);
+            this.race_18_pen.Name = "race_18_pen";
+            this.race_18_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_18_pen.TabIndex = 188;
+            this.race_18_pen.Text = "+ 3";
+            // 
+            // race_17_pen
+            // 
+            this.race_17_pen.AutoSize = true;
+            this.race_17_pen.Location = new System.Drawing.Point(380, 340);
+            this.race_17_pen.Name = "race_17_pen";
+            this.race_17_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_17_pen.TabIndex = 187;
+            this.race_17_pen.Text = "+ 3";
+            // 
+            // race_16_pen
+            // 
+            this.race_16_pen.AutoSize = true;
+            this.race_16_pen.Location = new System.Drawing.Point(380, 322);
+            this.race_16_pen.Name = "race_16_pen";
+            this.race_16_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_16_pen.TabIndex = 186;
+            this.race_16_pen.Text = "+ 3";
+            // 
+            // race_15_pen
+            // 
+            this.race_15_pen.AutoSize = true;
+            this.race_15_pen.Location = new System.Drawing.Point(380, 304);
+            this.race_15_pen.Name = "race_15_pen";
+            this.race_15_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_15_pen.TabIndex = 185;
+            this.race_15_pen.Text = "+ 3";
+            // 
+            // race_14_pen
+            // 
+            this.race_14_pen.AutoSize = true;
+            this.race_14_pen.Location = new System.Drawing.Point(380, 286);
+            this.race_14_pen.Name = "race_14_pen";
+            this.race_14_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_14_pen.TabIndex = 184;
+            this.race_14_pen.Text = "+ 3";
+            // 
+            // race_13_pen
+            // 
+            this.race_13_pen.AutoSize = true;
+            this.race_13_pen.Location = new System.Drawing.Point(380, 268);
+            this.race_13_pen.Name = "race_13_pen";
+            this.race_13_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_13_pen.TabIndex = 183;
+            this.race_13_pen.Text = "+ 3";
+            // 
+            // race_12_pen
+            // 
+            this.race_12_pen.AutoSize = true;
+            this.race_12_pen.Location = new System.Drawing.Point(380, 250);
+            this.race_12_pen.Name = "race_12_pen";
+            this.race_12_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_12_pen.TabIndex = 182;
+            this.race_12_pen.Text = "+ 3";
+            // 
+            // race_11_pen
+            // 
+            this.race_11_pen.AutoSize = true;
+            this.race_11_pen.Location = new System.Drawing.Point(380, 232);
+            this.race_11_pen.Name = "race_11_pen";
+            this.race_11_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_11_pen.TabIndex = 181;
+            this.race_11_pen.Text = "+ 3";
+            // 
+            // race_10_pen
+            // 
+            this.race_10_pen.AutoSize = true;
+            this.race_10_pen.Location = new System.Drawing.Point(380, 214);
+            this.race_10_pen.Name = "race_10_pen";
+            this.race_10_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_10_pen.TabIndex = 180;
+            this.race_10_pen.Text = "+ 3";
+            // 
+            // race_9_pen
+            // 
+            this.race_9_pen.AutoSize = true;
+            this.race_9_pen.Location = new System.Drawing.Point(380, 196);
+            this.race_9_pen.Name = "race_9_pen";
+            this.race_9_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_9_pen.TabIndex = 179;
+            this.race_9_pen.Text = "+ 3";
+            // 
+            // race_8_pen
+            // 
+            this.race_8_pen.AutoSize = true;
+            this.race_8_pen.Location = new System.Drawing.Point(380, 178);
+            this.race_8_pen.Name = "race_8_pen";
+            this.race_8_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_8_pen.TabIndex = 178;
+            this.race_8_pen.Text = "+ 3";
+            // 
+            // race_7_pen
+            // 
+            this.race_7_pen.AutoSize = true;
+            this.race_7_pen.Location = new System.Drawing.Point(380, 160);
+            this.race_7_pen.Name = "race_7_pen";
+            this.race_7_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_7_pen.TabIndex = 177;
+            this.race_7_pen.Text = "+ 3";
+            // 
+            // race_6_pen
+            // 
+            this.race_6_pen.AutoSize = true;
+            this.race_6_pen.Location = new System.Drawing.Point(380, 142);
+            this.race_6_pen.Name = "race_6_pen";
+            this.race_6_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_6_pen.TabIndex = 176;
+            this.race_6_pen.Text = "+ 3";
+            // 
+            // race_5_pen
+            // 
+            this.race_5_pen.AutoSize = true;
+            this.race_5_pen.Location = new System.Drawing.Point(380, 124);
+            this.race_5_pen.Name = "race_5_pen";
+            this.race_5_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_5_pen.TabIndex = 175;
+            this.race_5_pen.Text = "+ 3";
+            // 
+            // race_4_pen
+            // 
+            this.race_4_pen.AutoSize = true;
+            this.race_4_pen.Location = new System.Drawing.Point(380, 106);
+            this.race_4_pen.Name = "race_4_pen";
+            this.race_4_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_4_pen.TabIndex = 174;
+            this.race_4_pen.Text = "+ 3";
+            // 
+            // race_3_pen
+            // 
+            this.race_3_pen.AutoSize = true;
+            this.race_3_pen.Location = new System.Drawing.Point(380, 88);
+            this.race_3_pen.Name = "race_3_pen";
+            this.race_3_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_3_pen.TabIndex = 173;
+            this.race_3_pen.Text = "+ 3";
+            // 
+            // race_2_pen
+            // 
+            this.race_2_pen.AutoSize = true;
+            this.race_2_pen.Location = new System.Drawing.Point(380, 70);
+            this.race_2_pen.Name = "race_2_pen";
+            this.race_2_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_2_pen.TabIndex = 172;
+            this.race_2_pen.Text = "+ 3";
+            // 
+            // race_1_pen
+            // 
+            this.race_1_pen.AutoSize = true;
+            this.race_1_pen.Location = new System.Drawing.Point(380, 52);
+            this.race_1_pen.Name = "race_1_pen";
+            this.race_1_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_1_pen.TabIndex = 171;
+            this.race_1_pen.Text = "+ 3";
+            // 
+            // race_0_pen
+            // 
+            this.race_0_pen.AutoSize = true;
+            this.race_0_pen.Location = new System.Drawing.Point(380, 35);
+            this.race_0_pen.Name = "race_0_pen";
+            this.race_0_pen.Size = new System.Drawing.Size(22, 13);
+            this.race_0_pen.TabIndex = 170;
+            this.race_0_pen.Text = "+ 3";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(378, 16);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(29, 13);
+            this.label31.TabIndex = 169;
+            this.label31.Text = "PEN";
+            // 
+            // race_19_deltaL
+            // 
+            this.race_19_deltaL.AutoSize = true;
+            this.race_19_deltaL.Location = new System.Drawing.Point(315, 376);
+            this.race_19_deltaL.Name = "race_19_deltaL";
+            this.race_19_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_19_deltaL.TabIndex = 168;
+            this.race_19_deltaL.Text = "1:24.109";
+            // 
+            // race_18_deltaL
+            // 
+            this.race_18_deltaL.AutoSize = true;
+            this.race_18_deltaL.Location = new System.Drawing.Point(315, 358);
+            this.race_18_deltaL.Name = "race_18_deltaL";
+            this.race_18_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_18_deltaL.TabIndex = 167;
+            this.race_18_deltaL.Text = "1:24.109";
+            // 
+            // race_17_deltaL
+            // 
+            this.race_17_deltaL.AutoSize = true;
+            this.race_17_deltaL.Location = new System.Drawing.Point(315, 340);
+            this.race_17_deltaL.Name = "race_17_deltaL";
+            this.race_17_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_17_deltaL.TabIndex = 166;
+            this.race_17_deltaL.Text = "1:24.109";
+            // 
+            // race_16_deltaL
+            // 
+            this.race_16_deltaL.AutoSize = true;
+            this.race_16_deltaL.Location = new System.Drawing.Point(315, 322);
+            this.race_16_deltaL.Name = "race_16_deltaL";
+            this.race_16_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_16_deltaL.TabIndex = 165;
+            this.race_16_deltaL.Text = "1:24.109";
+            // 
+            // race_15_deltaL
+            // 
+            this.race_15_deltaL.AutoSize = true;
+            this.race_15_deltaL.Location = new System.Drawing.Point(315, 304);
+            this.race_15_deltaL.Name = "race_15_deltaL";
+            this.race_15_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_15_deltaL.TabIndex = 164;
+            this.race_15_deltaL.Text = "1:24.109";
+            // 
+            // race_14_deltaL
+            // 
+            this.race_14_deltaL.AutoSize = true;
+            this.race_14_deltaL.Location = new System.Drawing.Point(315, 286);
+            this.race_14_deltaL.Name = "race_14_deltaL";
+            this.race_14_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_14_deltaL.TabIndex = 163;
+            this.race_14_deltaL.Text = "1:24.109";
+            // 
+            // race_13_deltaL
+            // 
+            this.race_13_deltaL.AutoSize = true;
+            this.race_13_deltaL.Location = new System.Drawing.Point(315, 268);
+            this.race_13_deltaL.Name = "race_13_deltaL";
+            this.race_13_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_13_deltaL.TabIndex = 162;
+            this.race_13_deltaL.Text = "1:24.109";
+            // 
+            // race_12_deltaL
+            // 
+            this.race_12_deltaL.AutoSize = true;
+            this.race_12_deltaL.Location = new System.Drawing.Point(315, 250);
+            this.race_12_deltaL.Name = "race_12_deltaL";
+            this.race_12_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_12_deltaL.TabIndex = 161;
+            this.race_12_deltaL.Text = "1:24.109";
+            // 
+            // race_11_deltaL
+            // 
+            this.race_11_deltaL.AutoSize = true;
+            this.race_11_deltaL.Location = new System.Drawing.Point(315, 232);
+            this.race_11_deltaL.Name = "race_11_deltaL";
+            this.race_11_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_11_deltaL.TabIndex = 160;
+            this.race_11_deltaL.Text = "1:24.109";
+            // 
+            // race_10_deltaL
+            // 
+            this.race_10_deltaL.AutoSize = true;
+            this.race_10_deltaL.Location = new System.Drawing.Point(315, 214);
+            this.race_10_deltaL.Name = "race_10_deltaL";
+            this.race_10_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_10_deltaL.TabIndex = 159;
+            this.race_10_deltaL.Text = "1:24.109";
+            // 
+            // race_9_deltaL
+            // 
+            this.race_9_deltaL.AutoSize = true;
+            this.race_9_deltaL.Location = new System.Drawing.Point(315, 196);
+            this.race_9_deltaL.Name = "race_9_deltaL";
+            this.race_9_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_9_deltaL.TabIndex = 158;
+            this.race_9_deltaL.Text = "1:24.109";
+            // 
+            // race_8_deltaL
+            // 
+            this.race_8_deltaL.AutoSize = true;
+            this.race_8_deltaL.Location = new System.Drawing.Point(315, 178);
+            this.race_8_deltaL.Name = "race_8_deltaL";
+            this.race_8_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_8_deltaL.TabIndex = 157;
+            this.race_8_deltaL.Text = "1:24.109";
+            // 
+            // race_7_deltaL
+            // 
+            this.race_7_deltaL.AutoSize = true;
+            this.race_7_deltaL.Location = new System.Drawing.Point(315, 160);
+            this.race_7_deltaL.Name = "race_7_deltaL";
+            this.race_7_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_7_deltaL.TabIndex = 156;
+            this.race_7_deltaL.Text = "1:24.109";
+            // 
+            // race_6_deltaL
+            // 
+            this.race_6_deltaL.AutoSize = true;
+            this.race_6_deltaL.Location = new System.Drawing.Point(315, 142);
+            this.race_6_deltaL.Name = "race_6_deltaL";
+            this.race_6_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_6_deltaL.TabIndex = 155;
+            this.race_6_deltaL.Text = "1:24.109";
+            // 
+            // race_5_deltaL
+            // 
+            this.race_5_deltaL.AutoSize = true;
+            this.race_5_deltaL.Location = new System.Drawing.Point(315, 124);
+            this.race_5_deltaL.Name = "race_5_deltaL";
+            this.race_5_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_5_deltaL.TabIndex = 154;
+            this.race_5_deltaL.Text = "1:24.109";
+            // 
+            // race_4_deltaL
+            // 
+            this.race_4_deltaL.AutoSize = true;
+            this.race_4_deltaL.Location = new System.Drawing.Point(315, 106);
+            this.race_4_deltaL.Name = "race_4_deltaL";
+            this.race_4_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_4_deltaL.TabIndex = 153;
+            this.race_4_deltaL.Text = "1:24.109";
+            // 
+            // race_3_deltaL
+            // 
+            this.race_3_deltaL.AutoSize = true;
+            this.race_3_deltaL.Location = new System.Drawing.Point(315, 88);
+            this.race_3_deltaL.Name = "race_3_deltaL";
+            this.race_3_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_3_deltaL.TabIndex = 152;
+            this.race_3_deltaL.Text = "1:24.109";
+            // 
+            // race_2_deltaL
+            // 
+            this.race_2_deltaL.AutoSize = true;
+            this.race_2_deltaL.Location = new System.Drawing.Point(315, 70);
+            this.race_2_deltaL.Name = "race_2_deltaL";
+            this.race_2_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_2_deltaL.TabIndex = 151;
+            this.race_2_deltaL.Text = "1:24.109";
+            // 
+            // race_1_deltaL
+            // 
+            this.race_1_deltaL.AutoSize = true;
+            this.race_1_deltaL.Location = new System.Drawing.Point(315, 52);
+            this.race_1_deltaL.Name = "race_1_deltaL";
+            this.race_1_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_1_deltaL.TabIndex = 150;
+            this.race_1_deltaL.Text = "1:24.109";
+            // 
+            // race_0_deltaL
+            // 
+            this.race_0_deltaL.AutoSize = true;
+            this.race_0_deltaL.Location = new System.Drawing.Point(315, 35);
+            this.race_0_deltaL.Name = "race_0_deltaL";
+            this.race_0_deltaL.Size = new System.Drawing.Size(49, 13);
+            this.race_0_deltaL.TabIndex = 149;
+            this.race_0_deltaL.Text = "1:24.109";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(315, 16);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(51, 13);
+            this.label30.TabIndex = 148;
+            this.label30.Text = "DELTA L";
             // 
             // race_19_delta
             // 
@@ -3228,7 +3763,7 @@
             // race_19_pit
             // 
             this.race_19_pit.AutoSize = true;
-            this.race_19_pit.Location = new System.Drawing.Point(379, 376);
+            this.race_19_pit.Location = new System.Drawing.Point(487, 376);
             this.race_19_pit.Name = "race_19_pit";
             this.race_19_pit.Size = new System.Drawing.Size(24, 13);
             this.race_19_pit.TabIndex = 126;
@@ -3246,7 +3781,7 @@
             // race_19_tyre
             // 
             this.race_19_tyre.AutoSize = true;
-            this.race_19_tyre.Location = new System.Drawing.Point(316, 376);
+            this.race_19_tyre.Location = new System.Drawing.Point(424, 376);
             this.race_19_tyre.Name = "race_19_tyre";
             this.race_19_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_19_tyre.TabIndex = 124;
@@ -3273,7 +3808,7 @@
             // race_18_pit
             // 
             this.race_18_pit.AutoSize = true;
-            this.race_18_pit.Location = new System.Drawing.Point(379, 358);
+            this.race_18_pit.Location = new System.Drawing.Point(487, 358);
             this.race_18_pit.Name = "race_18_pit";
             this.race_18_pit.Size = new System.Drawing.Size(24, 13);
             this.race_18_pit.TabIndex = 121;
@@ -3291,7 +3826,7 @@
             // race_18_tyre
             // 
             this.race_18_tyre.AutoSize = true;
-            this.race_18_tyre.Location = new System.Drawing.Point(316, 358);
+            this.race_18_tyre.Location = new System.Drawing.Point(424, 358);
             this.race_18_tyre.Name = "race_18_tyre";
             this.race_18_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_18_tyre.TabIndex = 119;
@@ -3318,7 +3853,7 @@
             // race_17_pit
             // 
             this.race_17_pit.AutoSize = true;
-            this.race_17_pit.Location = new System.Drawing.Point(379, 340);
+            this.race_17_pit.Location = new System.Drawing.Point(487, 340);
             this.race_17_pit.Name = "race_17_pit";
             this.race_17_pit.Size = new System.Drawing.Size(24, 13);
             this.race_17_pit.TabIndex = 116;
@@ -3336,7 +3871,7 @@
             // race_17_tyre
             // 
             this.race_17_tyre.AutoSize = true;
-            this.race_17_tyre.Location = new System.Drawing.Point(316, 340);
+            this.race_17_tyre.Location = new System.Drawing.Point(424, 340);
             this.race_17_tyre.Name = "race_17_tyre";
             this.race_17_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_17_tyre.TabIndex = 114;
@@ -3363,7 +3898,7 @@
             // race_16_pit
             // 
             this.race_16_pit.AutoSize = true;
-            this.race_16_pit.Location = new System.Drawing.Point(379, 322);
+            this.race_16_pit.Location = new System.Drawing.Point(487, 322);
             this.race_16_pit.Name = "race_16_pit";
             this.race_16_pit.Size = new System.Drawing.Size(24, 13);
             this.race_16_pit.TabIndex = 111;
@@ -3381,7 +3916,7 @@
             // race_16_tyre
             // 
             this.race_16_tyre.AutoSize = true;
-            this.race_16_tyre.Location = new System.Drawing.Point(316, 322);
+            this.race_16_tyre.Location = new System.Drawing.Point(424, 322);
             this.race_16_tyre.Name = "race_16_tyre";
             this.race_16_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_16_tyre.TabIndex = 109;
@@ -3408,7 +3943,7 @@
             // race_15_pit
             // 
             this.race_15_pit.AutoSize = true;
-            this.race_15_pit.Location = new System.Drawing.Point(379, 304);
+            this.race_15_pit.Location = new System.Drawing.Point(487, 304);
             this.race_15_pit.Name = "race_15_pit";
             this.race_15_pit.Size = new System.Drawing.Size(24, 13);
             this.race_15_pit.TabIndex = 106;
@@ -3426,7 +3961,7 @@
             // race_15_tyre
             // 
             this.race_15_tyre.AutoSize = true;
-            this.race_15_tyre.Location = new System.Drawing.Point(316, 304);
+            this.race_15_tyre.Location = new System.Drawing.Point(424, 304);
             this.race_15_tyre.Name = "race_15_tyre";
             this.race_15_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_15_tyre.TabIndex = 104;
@@ -3453,7 +3988,7 @@
             // race_14_pit
             // 
             this.race_14_pit.AutoSize = true;
-            this.race_14_pit.Location = new System.Drawing.Point(379, 286);
+            this.race_14_pit.Location = new System.Drawing.Point(487, 286);
             this.race_14_pit.Name = "race_14_pit";
             this.race_14_pit.Size = new System.Drawing.Size(24, 13);
             this.race_14_pit.TabIndex = 101;
@@ -3471,7 +4006,7 @@
             // race_14_tyre
             // 
             this.race_14_tyre.AutoSize = true;
-            this.race_14_tyre.Location = new System.Drawing.Point(316, 286);
+            this.race_14_tyre.Location = new System.Drawing.Point(424, 286);
             this.race_14_tyre.Name = "race_14_tyre";
             this.race_14_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_14_tyre.TabIndex = 99;
@@ -3498,7 +4033,7 @@
             // race_13_pit
             // 
             this.race_13_pit.AutoSize = true;
-            this.race_13_pit.Location = new System.Drawing.Point(379, 268);
+            this.race_13_pit.Location = new System.Drawing.Point(487, 268);
             this.race_13_pit.Name = "race_13_pit";
             this.race_13_pit.Size = new System.Drawing.Size(24, 13);
             this.race_13_pit.TabIndex = 96;
@@ -3516,7 +4051,7 @@
             // race_13_tyre
             // 
             this.race_13_tyre.AutoSize = true;
-            this.race_13_tyre.Location = new System.Drawing.Point(316, 268);
+            this.race_13_tyre.Location = new System.Drawing.Point(424, 268);
             this.race_13_tyre.Name = "race_13_tyre";
             this.race_13_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_13_tyre.TabIndex = 94;
@@ -3543,7 +4078,7 @@
             // race_12_pit
             // 
             this.race_12_pit.AutoSize = true;
-            this.race_12_pit.Location = new System.Drawing.Point(379, 250);
+            this.race_12_pit.Location = new System.Drawing.Point(487, 250);
             this.race_12_pit.Name = "race_12_pit";
             this.race_12_pit.Size = new System.Drawing.Size(24, 13);
             this.race_12_pit.TabIndex = 91;
@@ -3561,7 +4096,7 @@
             // race_12_tyre
             // 
             this.race_12_tyre.AutoSize = true;
-            this.race_12_tyre.Location = new System.Drawing.Point(316, 250);
+            this.race_12_tyre.Location = new System.Drawing.Point(424, 250);
             this.race_12_tyre.Name = "race_12_tyre";
             this.race_12_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_12_tyre.TabIndex = 89;
@@ -3588,7 +4123,7 @@
             // race_11_pit
             // 
             this.race_11_pit.AutoSize = true;
-            this.race_11_pit.Location = new System.Drawing.Point(379, 232);
+            this.race_11_pit.Location = new System.Drawing.Point(487, 232);
             this.race_11_pit.Name = "race_11_pit";
             this.race_11_pit.Size = new System.Drawing.Size(24, 13);
             this.race_11_pit.TabIndex = 86;
@@ -3606,7 +4141,7 @@
             // race_11_tyre
             // 
             this.race_11_tyre.AutoSize = true;
-            this.race_11_tyre.Location = new System.Drawing.Point(316, 232);
+            this.race_11_tyre.Location = new System.Drawing.Point(424, 232);
             this.race_11_tyre.Name = "race_11_tyre";
             this.race_11_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_11_tyre.TabIndex = 84;
@@ -3633,7 +4168,7 @@
             // race_10_pit
             // 
             this.race_10_pit.AutoSize = true;
-            this.race_10_pit.Location = new System.Drawing.Point(379, 214);
+            this.race_10_pit.Location = new System.Drawing.Point(487, 214);
             this.race_10_pit.Name = "race_10_pit";
             this.race_10_pit.Size = new System.Drawing.Size(24, 13);
             this.race_10_pit.TabIndex = 81;
@@ -3651,7 +4186,7 @@
             // race_10_tyre
             // 
             this.race_10_tyre.AutoSize = true;
-            this.race_10_tyre.Location = new System.Drawing.Point(316, 214);
+            this.race_10_tyre.Location = new System.Drawing.Point(424, 214);
             this.race_10_tyre.Name = "race_10_tyre";
             this.race_10_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_10_tyre.TabIndex = 79;
@@ -3678,7 +4213,7 @@
             // race_9_pit
             // 
             this.race_9_pit.AutoSize = true;
-            this.race_9_pit.Location = new System.Drawing.Point(379, 196);
+            this.race_9_pit.Location = new System.Drawing.Point(487, 196);
             this.race_9_pit.Name = "race_9_pit";
             this.race_9_pit.Size = new System.Drawing.Size(24, 13);
             this.race_9_pit.TabIndex = 76;
@@ -3696,7 +4231,7 @@
             // race_9_tyre
             // 
             this.race_9_tyre.AutoSize = true;
-            this.race_9_tyre.Location = new System.Drawing.Point(316, 196);
+            this.race_9_tyre.Location = new System.Drawing.Point(424, 196);
             this.race_9_tyre.Name = "race_9_tyre";
             this.race_9_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_9_tyre.TabIndex = 74;
@@ -3723,7 +4258,7 @@
             // race_8_pit
             // 
             this.race_8_pit.AutoSize = true;
-            this.race_8_pit.Location = new System.Drawing.Point(379, 178);
+            this.race_8_pit.Location = new System.Drawing.Point(487, 178);
             this.race_8_pit.Name = "race_8_pit";
             this.race_8_pit.Size = new System.Drawing.Size(24, 13);
             this.race_8_pit.TabIndex = 71;
@@ -3741,7 +4276,7 @@
             // race_8_tyre
             // 
             this.race_8_tyre.AutoSize = true;
-            this.race_8_tyre.Location = new System.Drawing.Point(316, 178);
+            this.race_8_tyre.Location = new System.Drawing.Point(424, 178);
             this.race_8_tyre.Name = "race_8_tyre";
             this.race_8_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_8_tyre.TabIndex = 69;
@@ -3768,7 +4303,7 @@
             // race_7_pit
             // 
             this.race_7_pit.AutoSize = true;
-            this.race_7_pit.Location = new System.Drawing.Point(379, 160);
+            this.race_7_pit.Location = new System.Drawing.Point(487, 160);
             this.race_7_pit.Name = "race_7_pit";
             this.race_7_pit.Size = new System.Drawing.Size(24, 13);
             this.race_7_pit.TabIndex = 66;
@@ -3786,7 +4321,7 @@
             // race_7_tyre
             // 
             this.race_7_tyre.AutoSize = true;
-            this.race_7_tyre.Location = new System.Drawing.Point(316, 160);
+            this.race_7_tyre.Location = new System.Drawing.Point(424, 160);
             this.race_7_tyre.Name = "race_7_tyre";
             this.race_7_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_7_tyre.TabIndex = 64;
@@ -3813,7 +4348,7 @@
             // race_6_pit
             // 
             this.race_6_pit.AutoSize = true;
-            this.race_6_pit.Location = new System.Drawing.Point(379, 142);
+            this.race_6_pit.Location = new System.Drawing.Point(487, 142);
             this.race_6_pit.Name = "race_6_pit";
             this.race_6_pit.Size = new System.Drawing.Size(24, 13);
             this.race_6_pit.TabIndex = 61;
@@ -3831,7 +4366,7 @@
             // race_6_tyre
             // 
             this.race_6_tyre.AutoSize = true;
-            this.race_6_tyre.Location = new System.Drawing.Point(316, 142);
+            this.race_6_tyre.Location = new System.Drawing.Point(424, 142);
             this.race_6_tyre.Name = "race_6_tyre";
             this.race_6_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_6_tyre.TabIndex = 59;
@@ -3858,7 +4393,7 @@
             // race_5_pit
             // 
             this.race_5_pit.AutoSize = true;
-            this.race_5_pit.Location = new System.Drawing.Point(379, 124);
+            this.race_5_pit.Location = new System.Drawing.Point(487, 124);
             this.race_5_pit.Name = "race_5_pit";
             this.race_5_pit.Size = new System.Drawing.Size(24, 13);
             this.race_5_pit.TabIndex = 56;
@@ -3876,7 +4411,7 @@
             // race_5_tyre
             // 
             this.race_5_tyre.AutoSize = true;
-            this.race_5_tyre.Location = new System.Drawing.Point(316, 124);
+            this.race_5_tyre.Location = new System.Drawing.Point(424, 124);
             this.race_5_tyre.Name = "race_5_tyre";
             this.race_5_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_5_tyre.TabIndex = 54;
@@ -3903,7 +4438,7 @@
             // race_4_pit
             // 
             this.race_4_pit.AutoSize = true;
-            this.race_4_pit.Location = new System.Drawing.Point(379, 106);
+            this.race_4_pit.Location = new System.Drawing.Point(487, 106);
             this.race_4_pit.Name = "race_4_pit";
             this.race_4_pit.Size = new System.Drawing.Size(24, 13);
             this.race_4_pit.TabIndex = 51;
@@ -3921,7 +4456,7 @@
             // race_4_tyre
             // 
             this.race_4_tyre.AutoSize = true;
-            this.race_4_tyre.Location = new System.Drawing.Point(316, 106);
+            this.race_4_tyre.Location = new System.Drawing.Point(424, 106);
             this.race_4_tyre.Name = "race_4_tyre";
             this.race_4_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_4_tyre.TabIndex = 49;
@@ -3948,7 +4483,7 @@
             // race_3_pit
             // 
             this.race_3_pit.AutoSize = true;
-            this.race_3_pit.Location = new System.Drawing.Point(379, 88);
+            this.race_3_pit.Location = new System.Drawing.Point(487, 88);
             this.race_3_pit.Name = "race_3_pit";
             this.race_3_pit.Size = new System.Drawing.Size(24, 13);
             this.race_3_pit.TabIndex = 46;
@@ -3966,7 +4501,7 @@
             // race_3_tyre
             // 
             this.race_3_tyre.AutoSize = true;
-            this.race_3_tyre.Location = new System.Drawing.Point(316, 88);
+            this.race_3_tyre.Location = new System.Drawing.Point(424, 88);
             this.race_3_tyre.Name = "race_3_tyre";
             this.race_3_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_3_tyre.TabIndex = 44;
@@ -3993,7 +4528,7 @@
             // race_2_pit
             // 
             this.race_2_pit.AutoSize = true;
-            this.race_2_pit.Location = new System.Drawing.Point(379, 70);
+            this.race_2_pit.Location = new System.Drawing.Point(487, 70);
             this.race_2_pit.Name = "race_2_pit";
             this.race_2_pit.Size = new System.Drawing.Size(24, 13);
             this.race_2_pit.TabIndex = 41;
@@ -4011,7 +4546,7 @@
             // race_2_tyre
             // 
             this.race_2_tyre.AutoSize = true;
-            this.race_2_tyre.Location = new System.Drawing.Point(316, 70);
+            this.race_2_tyre.Location = new System.Drawing.Point(424, 70);
             this.race_2_tyre.Name = "race_2_tyre";
             this.race_2_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_2_tyre.TabIndex = 39;
@@ -4038,7 +4573,7 @@
             // race_1_pit
             // 
             this.race_1_pit.AutoSize = true;
-            this.race_1_pit.Location = new System.Drawing.Point(379, 52);
+            this.race_1_pit.Location = new System.Drawing.Point(487, 52);
             this.race_1_pit.Name = "race_1_pit";
             this.race_1_pit.Size = new System.Drawing.Size(24, 13);
             this.race_1_pit.TabIndex = 36;
@@ -4056,7 +4591,7 @@
             // race_1_tyre
             // 
             this.race_1_tyre.AutoSize = true;
-            this.race_1_tyre.Location = new System.Drawing.Point(316, 52);
+            this.race_1_tyre.Location = new System.Drawing.Point(424, 52);
             this.race_1_tyre.Name = "race_1_tyre";
             this.race_1_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_1_tyre.TabIndex = 34;
@@ -4083,7 +4618,7 @@
             // race_0_pit
             // 
             this.race_0_pit.AutoSize = true;
-            this.race_0_pit.Location = new System.Drawing.Point(379, 35);
+            this.race_0_pit.Location = new System.Drawing.Point(487, 35);
             this.race_0_pit.Name = "race_0_pit";
             this.race_0_pit.Size = new System.Drawing.Size(24, 13);
             this.race_0_pit.TabIndex = 31;
@@ -4101,7 +4636,7 @@
             // race_0_tyre
             // 
             this.race_0_tyre.AutoSize = true;
-            this.race_0_tyre.Location = new System.Drawing.Point(316, 35);
+            this.race_0_tyre.Location = new System.Drawing.Point(424, 35);
             this.race_0_tyre.Name = "race_0_tyre";
             this.race_0_tyre.Size = new System.Drawing.Size(22, 13);
             this.race_0_tyre.TabIndex = 29;
@@ -4128,7 +4663,7 @@
             // label96
             // 
             this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(379, 16);
+            this.label96.Location = new System.Drawing.Point(487, 16);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(29, 13);
             this.label96.TabIndex = 28;
@@ -4146,7 +4681,7 @@
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(316, 16);
+            this.label94.Location = new System.Drawing.Point(424, 16);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(46, 13);
             this.label94.TabIndex = 27;
@@ -4418,12 +4953,38 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.OverviewToggle);
             // 
+            // dataGrid_rounds
+            // 
+            this.dataGrid_rounds.AllowUserToAddRows = false;
+            this.dataGrid_rounds.AllowUserToDeleteRows = false;
+            this.dataGrid_rounds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_rounds.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Round,
+            this.RoundTime});
+            this.dataGrid_rounds.Location = new System.Drawing.Point(8, 6);
+            this.dataGrid_rounds.Name = "dataGrid_rounds";
+            this.dataGrid_rounds.ReadOnly = true;
+            this.dataGrid_rounds.Size = new System.Drawing.Size(917, 723);
+            this.dataGrid_rounds.TabIndex = 0;
+            // 
+            // Round
+            // 
+            this.Round.HeaderText = "Round";
+            this.Round.Name = "Round";
+            this.Round.ReadOnly = true;
+            // 
+            // RoundTime
+            // 
+            this.RoundTime.HeaderText = "Time";
+            this.RoundTime.Name = "RoundTime";
+            this.RoundTime.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1380, 779);
+            this.ClientSize = new System.Drawing.Size(1484, 779);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.input_port);
@@ -4435,6 +4996,7 @@
             this.Name = "Form1";
             this.Text = "Telemetry";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -4448,8 +5010,10 @@
             this.groupBox1.PerformLayout();
             this.raceinfo.ResumeLayout(false);
             this.raceinfo.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.raceoverview.ResumeLayout(false);
             this.raceoverview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_rounds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4814,7 +5378,7 @@
         private System.Windows.Forms.Label race_0_pit;
         private System.Windows.Forms.Label race_0_time;
         private System.Windows.Forms.Label race_0_tyre;
-        private System.Windows.Forms.Label label153;
+        private System.Windows.Forms.Label data_pit;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox input_port;
         private System.Windows.Forms.Button button2;
@@ -4840,6 +5404,57 @@
         private System.Windows.Forms.Label race_0_delta;
         private System.Windows.Forms.Label label173;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label race_19_pen;
+        private System.Windows.Forms.Label race_18_pen;
+        private System.Windows.Forms.Label race_17_pen;
+        private System.Windows.Forms.Label race_16_pen;
+        private System.Windows.Forms.Label race_15_pen;
+        private System.Windows.Forms.Label race_14_pen;
+        private System.Windows.Forms.Label race_13_pen;
+        private System.Windows.Forms.Label race_12_pen;
+        private System.Windows.Forms.Label race_11_pen;
+        private System.Windows.Forms.Label race_10_pen;
+        private System.Windows.Forms.Label race_9_pen;
+        private System.Windows.Forms.Label race_8_pen;
+        private System.Windows.Forms.Label race_7_pen;
+        private System.Windows.Forms.Label race_6_pen;
+        private System.Windows.Forms.Label race_5_pen;
+        private System.Windows.Forms.Label race_4_pen;
+        private System.Windows.Forms.Label race_3_pen;
+        private System.Windows.Forms.Label race_2_pen;
+        private System.Windows.Forms.Label race_1_pen;
+        private System.Windows.Forms.Label race_0_pen;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label race_19_deltaL;
+        private System.Windows.Forms.Label race_18_deltaL;
+        private System.Windows.Forms.Label race_17_deltaL;
+        private System.Windows.Forms.Label race_16_deltaL;
+        private System.Windows.Forms.Label race_15_deltaL;
+        private System.Windows.Forms.Label race_14_deltaL;
+        private System.Windows.Forms.Label race_13_deltaL;
+        private System.Windows.Forms.Label race_12_deltaL;
+        private System.Windows.Forms.Label race_11_deltaL;
+        private System.Windows.Forms.Label race_10_deltaL;
+        private System.Windows.Forms.Label race_9_deltaL;
+        private System.Windows.Forms.Label race_8_deltaL;
+        private System.Windows.Forms.Label race_7_deltaL;
+        private System.Windows.Forms.Label race_6_deltaL;
+        private System.Windows.Forms.Label race_5_deltaL;
+        private System.Windows.Forms.Label race_4_deltaL;
+        private System.Windows.Forms.Label race_3_deltaL;
+        private System.Windows.Forms.Label race_2_deltaL;
+        private System.Windows.Forms.Label race_1_deltaL;
+        private System.Windows.Forms.Label race_0_deltaL;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label race_sector3;
+        private System.Windows.Forms.Label race_sector2;
+        private System.Windows.Forms.Label race_sector1;
+        private System.Windows.Forms.Label race_roundtime;
+        private System.Windows.Forms.Label race_lr;
+        private System.Windows.Forms.DataGridView dataGrid_rounds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Round;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoundTime;
     }
 }
 

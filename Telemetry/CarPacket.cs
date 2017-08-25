@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 
 namespace Telemetry
 {
+    /*
     
-    [Serializable]
-    public struct CarUDPData : ISerializable
+    public struct CarUDPData
     {
-        public CarUDPData(SerializationInfo info, StreamingContext context)
+        /*public CarUDPData(SerializationInfo info, StreamingContext context)
         {
             worldPosition = new float[3];
             worldPosition[0] = info.GetValue<float>("worldPositionX");
@@ -52,7 +52,7 @@ namespace Telemetry
         public byte sector;
         public byte currentLapInvalid;
         public byte penalities;
-
+        /*
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("worldPositionX", worldPosition[0]);
@@ -74,6 +74,7 @@ namespace Telemetry
             info.AddValue("currentLapInvalid", currentLapInvalid);
             info.AddValue("penalities", penalities);
         }
+        
     }
-    
+    */
 }
